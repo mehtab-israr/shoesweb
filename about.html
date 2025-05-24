@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shome Header Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons (Optional, but good for icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="about.css">
+    <!-- Font Awesome CDN (replace with your preferred version/method if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header>
+      <!-- Top Bar -->
+      <div class="top-bar py-1">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+          <div class="top-bar-left text-muted d-none d-md-block"> World Wide Completely Free Returns and Free Shipping </div>
+          <div class="top-bar-right d-flex align-items-center">
+            <a href="tel:+00123456789" class="text-decoration-none me-3">
+              <i class="bi bi-telephone-fill text-danger me-1"></i> +00 123 456 789 </a>
+            <a href="mailto:demo@example.com" class="text-decoration-none me-3">
+              <i class="bi bi-envelope-fill text-danger me-1"></i> demo@example.com </a>
+            <a href="#" class="text-decoration-none">
+              <i class="bi bi-person-fill text-danger me-1"></i> Account </a>
+          </div>
+        </div>
+      </div>
+      <!-- Middle Header: Logo, Search, Icons -->
+      <div class="middle-header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a class="navbar-brand logo" href="#">Shome</a>
+          <!-- Search Bar -->
+          <form class="d-flex search-form flex-grow-1 mx-3 mx-lg-5" role="search">
+            <input class="form-control me-0 rounded-0 rounded-start" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-danger rounded-0 rounded-end px-3" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+          <!-- Icons -->
+          <div class="header-icons d-flex align-items-center">
+            <a href="#" class="text-decoration-none me-3 position-relative">
+              <i class="bi bi-heart fs-4"></i>
+              <!-- Optional Wishlist Count Badge -->
+              <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span> -->
+            </a>
+            <a href="#" class="text-decoration-none position-relative">
+              <i class="bi bi-bag fs-4"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 02 <span class="visually-hidden">items in cart</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Main Navigation Bar -->
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="container">
+          <!-- Toggler Button (for mobile) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="mainNavbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dro">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> PAGES </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="account.html">ACCOUNT</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="login.html">LOGIN</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="register.html">REGISTER</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> SHOP </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Shop Grid</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Shop List</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Product Details</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> BLOG </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Blog Standard</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Blog Single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="smart-shoes-section">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- Image Column -->
+          <div class="image-column animate-on-scroll">
+            <div class="image-container">
+              <!-- The grey frame will be added via CSS pseudo-element -->
+              <img src="assas-removebg-preview.png" alt="Pair of smart shoes with red accent">
+            </div>
+          </div>
+          <!-- Text Column -->
+          <div class="text-column animate-on-scroll">
+            <h2 class="section-headline"> Smart Life <br>
+              <strong>With Smart Shoes</strong>
+            </h2>
+            <p class="section-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. </p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero-banner">
+      <div class="banner-wrapper">
+        <!-- Left Content Area -->
+        <div class="banner-content animate-section">
+          <div class="text-content">
+            <p class="emphasis-text animate-item" data-delay="0.1s">Saving 50%</p>
+            <h1 class="main-headline animate-item" data-delay="0.2s">All Online Store</h1>
+            <p class="sub-text animate-item" data-delay="0.3s">OFFER AVAILABLE ALL SHOES & PRODUCTS</p>
+            <a href="#shop" class="cta-button animate-item" data-delay="0.4s">Shop Now</a>
+          </div>
+        </div>
+        <!-- Right Visual Area -->
+        <div class="banner-visuals animate-section">
+          <!-- Diagonal "NEW" Text -->
+          <div class="new-label animate-item" data-delay="0.5s">NEW</div>
+          <!-- Shoe Image -->
+          <img src="closeup-shot-beautiful-handmade-shoes-workshop.jpg" alt="Pair of orange running shoes" class="shoe-image animate-item" data-delay="0.3s">
+          <!-- Optional: Halftone pattern added via CSS background -->
+        </div>
+      </div>
+    </section>
+    <section class="team-section animate-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header animate-item" data-delay="0s">
+          <h2 class="section-title">Our Team</h2>
+          <p class="section-subtitle"> There are many variations of passages of Lorem Ipsum available </p>
+        </div>
+        <!-- Team Grid -->
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-member-card animate-item" data-delay="0.1s">
+            <div class="member-image-wrapper">
+              <img src="pexels-chuck-2287252.jpg" alt="Jander Durham" class="member-photo">
+              <div class="social-overlay">
+                <ul class="social-links">
+                  <li>
+                    <a href="#" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Jander Durham</h3>
+              <p class="member-role">Team Member</p>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="team-member-card animate-item" data-delay="0.2s">
+            <div class="member-image-wrapper">
+              <img src="pexels-david-garrison-1128051-2128807.jpg" alt="Jaren Hammer" class="member-photo">
+              <div class="social-overlay">
+                <ul class="social-links">
+                  <li>
+                    <a href="#" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Jaren Hammer</h3>
+              <p class="member-role">Team Member</p>
+            </div>
+          </div>
+          <!-- Team Member 3 -->
+          <div class="team-member-card animate-item" data-delay="0.3s">
+            <div class="member-image-wrapper">
+              <img src="pexels-chuck-2287252.jpg" alt="Nurdan Denkel" class="member-photo">
+              <div class="social-overlay">
+                <ul class="social-links">
+                  <li>
+                    <a href="#" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Dribbble">
+                      <i class="fab fa-dribbble"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Github">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Nurdan Denkel</h3>
+              <p class="member-role">Team Member</p>
+            </div>
+          </div>
+          <!-- Team Member 4 -->
+          <div class="team-member-card animate-item" data-delay="0.4s">
+            <div class="member-image-wrapper">
+              <img src="pexels-david-garrison-1128051-2128807.jpg" alt="Monroe Bond" class="member-photo">
+              <div class="social-overlay">
+                <ul class="social-links">
+                  <li>
+                    <a href="#" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Dribbble">
+                      <i class="fab fa-dribbble"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" aria-label="Pinterest">
+                      <i class="fab fa-pinterest-p"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Monroe Bond</h3>
+              <p class="member-role">Team Member</p>
+            </div>
+          </div>
+        </div>
+        <!-- /team-grid -->
+      </div>
+      <!-- /container -->
+    </section>
+    <!-- Testimonials Row -->
+    <div class="row justify-content-center g-4">
+      <!-- Testimonial Card 1 -->
+      <div class="col-lg-5 col-md-6">
+        <div class="testimonial-card anim-fade-up">
+          <img src="pexels-chuck-2287252.jpg" alt="Jaren Hammer" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <p class="testimonial-quote"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </p>
+            <p class="testimonial-author">Jaren Hammer</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial Card 2 -->
+      <div class="col-lg-5 col-md-6">
+        <div class="testimonial-card anim-fade-up" style="--anim-delay: 0.1s;">
+          <img src="pexels-david-garrison-1128051-2128807.jpg" alt="Dorian Cordova" class="testimonial-avatar">
+          <div class="testimonial-body">
+            <p class="testimonial-quote"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </p>
+            <p class="testimonial-author">Dorian Cordova</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add more testimonials within the row if desired (will wrap or stack) -->
+    </div>
+    </div>
+    </section>
+    <!-- End Client Feedback Section -->
+    <!-- Footer Section -->
+    <footer class="footer-section pt-5 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- gy-4 adds vertical gutter spacing -->
+          <!-- Column 1: About & Social -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-logo">Shome</h3>
+              <p class="footer-about-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+              <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <!-- Dribbble icon might not be in standard Bootstrap Icons -->
+                <a href="#" aria-label="Dribbble">
+                  <i class="bi bi-dribbble"></i>
+                </a>
+                <!-- Or use bi-globe/bi-basketball if missing -->
+                <a href="#" aria-label="Pinterest">
+                  <i class="bi bi-pinterest"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 2: Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Services</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">Home monitoring</a>
+                </li>
+                <li>
+                  <a href="#">Air Filters</a>
+                </li>
+                <li>
+                  <a href="#">Professional installation</a>
+                </li>
+                <li>
+                  <a href="#">Smart Buildings</a>
+                </li>
+                <li>
+                  <a href="#">For contractors</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 3: My Account -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">My Account</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">My Account</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+                <li>
+                  <a href="#">Shopping cart</a>
+                </li>
+                <li>
+                  <a href="#">Shop</a>
+                </li>
+                <li>
+                  <a href="#">Services Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Contact Info</h4>
+              <ul class="footer-contact-list list-unstyled">
+                <li>Address: Your address goes here.</li>
+                <li>Phone//fax: 0123456789</li>
+                <li>Email: demo@example.com</li>
+                <li>www.example.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+        <!-- Optional: Footer Bottom Bar -->
+        <!--
+            <div class="row mt-4 pt-4 border-top border-secondary border-opacity-25"><div class="col text-center text-secondary">
+                   © 2023 Shome. All Rights Reserved.
+                </div></div>
+             -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- Rest of your page content -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        // Fallback for browsers that don't support Intersection Observer
+        if (!('IntersectionObserver' in window)) {
+          animatedElements.forEach(element => {
+            element.classList.add('is-visible');
+            // Also make sure nested elements are visible immediately
+            const nestedAnimated = element.querySelectorAll('.section-headline, .section-description, .cta-button');
+            nestedAnimated.forEach(nested => nested.classList.add('is-visible'));
+          });
+          return; // Stop the script here if Intersection Observer isn't supported
+        }
+        // Intersection Observer Configuration
+        const observerOptions = {
+          root: null, // Use the viewport as the root
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            // If the element is intersecting (visible)
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              // --- Animate nested text elements ---
+              // Select nested elements ONLY within the currently intersecting target
+              const nestedAnimated = entry.target.querySelectorAll('.section-headline, .section-description, .cta-button');
+              nestedAnimated.forEach(nested => {
+                // Add is-visible directly (delays are handled by CSS)
+                nested.classList.add('is-visible');
+              });
+              // --- End nested animation ---
+              // Optional: Stop observing the element once it's visible
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        // Observe each element that needs animation
+        animatedElements.forEach(element => {
+          observer.observe(element);
+        });
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedSections = document.querySelectorAll('.animate-section');
+        // Fallback for browsers that don't support Intersection Observer
+        if (!('IntersectionObserver' in window)) {
+          animatedSections.forEach(section => {
+            section.classList.add('is-visible');
+            const items = section.querySelectorAll('.animate-item');
+            items.forEach(item => item.classList.add('is-visible')); // Force visible
+          });
+          return;
+        }
+        // Intersection Observer Configuration
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const section = entry.target;
+              section.classList.add('is-visible'); // Mark section as visible
+              // Find all animatable items within this specific section
+              const itemsToAnimate = section.querySelectorAll('.animate-item');
+              itemsToAnimate.forEach(item => {
+                const delay = item.dataset.delay || '0s'; // Get delay from data attribute
+                item.style.transitionDelay = delay; // Apply CSS transition delay
+                item.classList.add('is-visible'); // Add class to trigger animation
+              });
+              // Optional: Stop observing the section once animated
+              observer.unobserve(section);
+            }
+          });
+        }, observerOptions);
+        // Observe each section
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedSections = document.querySelectorAll('.animate-section');
+        // Fallback for browsers that don't support Intersection Observer
+        if (!('IntersectionObserver' in window)) {
+          animatedSections.forEach(section => {
+            section.classList.add('is-visible');
+            const items = section.querySelectorAll('.animate-item');
+            items.forEach(item => item.classList.add('is-visible')); // Force visible
+          });
+          return;
+        }
+        // Intersection Observer Configuration
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const section = entry.target;
+              section.classList.add('is-visible'); // Mark section as visible
+              // Find all animatable items within this specific section
+              const itemsToAnimate = section.querySelectorAll('.animate-item');
+              itemsToAnimate.forEach(item => {
+                const delay = item.dataset.delay || '0s'; // Get delay from data attribute
+                item.style.transitionDelay = delay; // Apply CSS transition delay
+                item.classList.add('is-visible'); // Add class to trigger animation
+              });
+              // Optional: Stop observing the section once animated
+              observer.unobserve(section);
+            }
+          });
+        }, observerOptions);
+        // Observe each section
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,592 @@
+/* Import a Google Font (Example: Montserrat) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif; /* Apply the font */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: #f8f9fa; /* Light grey background */
+  font-size: 0.8rem; /* Smaller font size */
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar-right a {
+  color: #6c757d; /* Muted text color */
+  transition: color 0.2s ease-in-out;
+}
+
+.top-bar-right a:hover {
+  color: #dc3545; /* Red color on hover */
+}
+
+.top-bar-right .bi {
+  vertical-align: middle;
+}
+
+/* --- Middle Header --- */
+.middle-header {
+  background-color: white; /* White background */
+}
+
+.logo {
+  font-size: 2.8rem; /* Larger font size */
+  font-weight: 900; /* Very bold */
+  color: #212529; /* Dark color */
+  text-decoration: none;
+  letter-spacing: -2px; /* Tighten letter spacing slightly */
+  line-height: 1;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.search-form {
+  max-width: 500px; /* Limit search bar width on larger screens */
+}
+
+.search-form .form-control {
+  border-right: none; /* Remove border between input and button */
+}
+
+.search-form .form-control:focus {
+  box-shadow: none; /* Remove focus glow */
+  border-color: #ced4da; /* Keep standard border color on focus */
+}
+
+.search-form .btn-danger {
+  border: 1px solid #dc3545; /* Add border to match input */
+  background-color: #dc3545; /* Red background */
+}
+
+.header-icons a {
+  color: #212529; /* Dark icon color */
+}
+
+.header-icons a:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+.header-icons .badge {
+  font-size: 0.6em;
+  padding: 0.3em 0.4em; /* Adjust badge padding */
+  transform: translate(50%, -50%); /* Fine-tune badge position */
+}
+
+/* --- Main Navigation Bar --- */
+.main-navbar {
+  background-color: #ea4c3c; /* Specific Red from image */
+}
+
+.main-navbar .nav-link {
+  color: #ffffff; /* White text */
+  padding: 0.8rem 1rem;
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 700; /* Bold */
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active,
+.main-navbar .nav-item.show .nav-link {
+  /* Style for active/hover/open dropdown */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slightly darker background on interaction */
+}
+
+.main-navbar .dropdown-menu {
+  border-radius: 0; /* Square corners for dropdown */
+  border: none;
+  margin-top: 0; /* Align dropdown directly below */
+  font-size: 0.9rem;
+}
+
+.main-navbar .dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-transform: none; /* Normal case for dropdown items */
+  font-weight: 400; /* Normal weight */
+}
+.main-navbar .dropdown-item:hover,
+.main-navbar .dropdown-item:focus {
+  background-color: #f8f9fa; /* Light grey hover */
+  color: #ea4c3c; /* Red text on hover */
+}
+
+/* --- Responsiveness Adjustments --- */
+
+/* Make search bar take more width on smaller screens before collapsing */
+@media (max-width: 991.98px) {
+  .search-form {
+    max-width: none; /* Allow full width */
+    order: 3; /* Move search below logo and icons */
+    width: 100%; /* Take full width */
+    margin-top: 1rem !important; /* Add space above */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .middle-header > .container {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  .logo {
+    order: 1;
+  }
+  .header-icons {
+    order: 2;
+  }
+  .main-navbar .navbar-nav {
+    align-items: center; /* Center items in collapsed menu */
+  }
+  .main-navbar .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding for collapsed menu */
+    text-align: center;
+    width: 100%;
+  }
+  .main-navbar .dropdown-menu {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.1
+    ); /* Darker background for dropdown in mobile */
+    text-align: center;
+  }
+  .main-navbar .dropdown-item {
+    color: #fff; /* White text for mobile dropdown items */
+  }
+  .main-navbar .dropdown-item:hover,
+  .main-navbar .dropdown-item:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+}
+
+/* Hide top bar text on very small screens if needed */
+@media (max-width: 575.98px) {
+  .top-bar-left {
+    display: none; /* Hide completely */
+  }
+  .top-bar > .container {
+    justify-content: center; /* Center the right items */
+  }
+  .logo {
+    font-size: 2rem; /* Slightly smaller logo */
+  }
+  .header-icons .bi {
+    font-size: 1.2rem; /* Smaller icons */
+  }
+}
+/* --- Footer Section --- */
+.footer-section {
+  background-color: #2c303a; /* Dark background color */
+  color: #adb5bd; /* Default light grey text color */
+  font-size: 0.9rem;
+}
+
+.footer-widget {
+  margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff; /* White logo */
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.footer-about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.widget-title {
+  color: #ffffff; /* White widget titles */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+  margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+  color: #adb5bd; /* Link color */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff; /* White on hover */
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+  line-height: 1.7;
+}
+
+.footer-social-icons a {
+  display: inline-flex; /* Use flex for centering */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #adb5bd; /* Icon color */
+  border-radius: 6px; /* Slightly rounded square */
+  margin-right: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #ea4c3c; /* Theme red background on hover */
+  color: #ffffff; /* White icon on hover */
+}
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .footer-section {
+    text-align: center; /* Center align widgets on mobile */
+  }
+  .footer-social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+  }
+}
+/* Container */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Contact Wrapper - Holds columns */
+.contact-wrapper {
+  background-color: #fff; /* White background for the main box */
+  padding: 40px; /* Padding inside the wrapper */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 40px; /* Gap between form and info */
+  position: relative; /* For pseudo-elements */
+  overflow: hidden; /* Clip pseudo-elements */
+}
+
+/* --- Left Column: Form --- */
+.form-column {
+  flex: 2; /* Form takes more space */
+  min-width: 300px; /* Minimum width */
+  position: relative; /* For pseudo-elements */
+  z-index: 1; /* Above background patterns */
+}
+
+/* Optional Decorative Backgrounds */
+.form-column::before {
+  /* Halftone */
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.04) 1.5px,
+    transparent 2px
+  );
+  background-size: 12px 12px;
+  opacity: 0.6;
+  z-index: -1;
+}
+.form-column::after {
+  /* Circles */
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(230, 57, 70, 0.1); /* Faint red */
+  border-radius: 50%;
+  z-index: -1;
+}
+/* Second circle */
+.contact-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(230, 57, 70, 0.08); /* Faint red */
+  border-radius: 50%;
+  z-index: 0; /* Below info column potentially */
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-title-main {
+  font-size: 2.1em;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.form-title-sub {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+}
+
+.contact-form .form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  flex: 1; /* Share space in a row */
+  min-width: calc(50% - 10px); /* Ensure 2 columns layout works */
+}
+
+/* Full width for subject and message */
+.contact-form .form-group:nth-child(2),
+.contact-form .form-group:nth-child(3) {
+  min-width: 100%;
+}
+
+.contact-form label.sr-only {
+  /* Hide labels visually but keep for accessibility */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: #444;
+  font-family: inherit; /* Use body font */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e63946; /* Red focus border */
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15); /* Red focus shadow */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resize */
+}
+
+.contact-form .required {
+  color: #e63946; /* Red asterisk */
+}
+
+.submit-button {
+  background-color: #e63946; /* Red button */
+  color: #fff;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block; /* Allow margin top */
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #d62839; /* Darker red */
+  transform: translateY(-2px);
+}
+
+/* --- Right Column: Info Blocks --- */
+.info-column {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between info blocks */
+  z-index: 1;
+}
+
+.info-block {
+  background-color: #fff; /* White background for blocks */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon {
+  font-size: 2.5em; /* Icon size */
+  color: #e63946; /* Red icon */
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.info-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.info-detail {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.7;
+}
+.info-detail a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.info-detail a:hover {
+  color: #e63946;
+  text-decoration: underline;
+}
+
+/* --- Animation Styles --- */
+.animate-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Specific animation for form elements if needed */
+.contact-form .form-group,
+.contact-form .submit-button {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s; /* Add delay */
+}
+
+.animate-section.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Trigger form element animation when section is visible */
+.animate-section.is-visible .contact-form .form-group,
+.animate-section.is-visible .contact-form .submit-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Apply individual delays to form elements if desired using more JS or nth-child */
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    padding: 30px;
+    gap: 30px;
+  }
+  .form-column {
+    flex-basis: 100%; /* Make form full width */
+    order: 1; /* Form first */
+  }
+  .info-column {
+    flex-basis: 100%; /* Info blocks full width */
+    order: 2; /* Info below form */
+    flex-direction: row; /* Arrange info blocks horizontally */
+    justify-content: space-around; /* Space them out */
+    gap: 20px;
+  }
+  .info-block {
+    flex: 1; /* Allow blocks to share space */
+    min-width: 200px; /* Minimum width */
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-wrapper {
+    padding: 25px 20px;
+  }
+  .info-column {
+    flex-direction: column; /* Stack info blocks */
+  }
+  .info-block {
+    min-width: auto; /* Reset min width */
+  }
+  .form-title-main {
+    font-size: 1.9em;
+  }
+  .form-title-sub {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form .form-row {
+    flex-direction: column; /* Stack name/email fields */
+    gap: 0; /* Remove gap when stacked */
+  }
+  .contact-form .form-group {
+    min-width: 100%; /* Ensure full width when stacked */
+    margin-bottom: 18px;
+  }
+  .submit-button {
+    width: 100%; /* Full width button */
+  }
+  .info-title {
+    font-size: 1.1em;
+  }
+  .info-detail {
+    font-size: 0.9em;
+  }
+}

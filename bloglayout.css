@@ -1,0 +1,562 @@
+/* Import a Google Font (Example: Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply the font */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: #f8f9fa; /* Light grey background */
+    font-size: 0.8rem; /* Smaller font size */
+    border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar-right a {
+    color: #6c757d; /* Muted text color */
+    transition: color 0.2s ease-in-out;
+}
+
+.top-bar-right a:hover {
+    color: #dc3545; /* Red color on hover */
+}
+
+.top-bar-right .bi {
+    vertical-align: middle;
+}
+
+/* --- Middle Header --- */
+.middle-header {
+    background-color: white; /* White background */
+}
+
+.logo {
+    font-size: 2.8rem; /* Larger font size */
+    font-weight: 900; /* Very bold */
+    color: #212529; /* Dark color */
+    text-decoration: none;
+    letter-spacing: -2px; /* Tighten letter spacing slightly */
+    line-height: 1;
+}
+
+.logo:hover {
+    color: #000;
+}
+
+.search-form {
+    max-width: 500px; /* Limit search bar width on larger screens */
+}
+
+.search-form .form-control {
+    border-right: none; /* Remove border between input and button */
+}
+
+.search-form .form-control:focus {
+    box-shadow: none; /* Remove focus glow */
+    border-color: #ced4da; /* Keep standard border color on focus */
+}
+
+.search-form .btn-danger {
+    border: 1px solid #dc3545; /* Add border to match input */
+    background-color: #dc3545; /* Red background */
+}
+
+.header-icons a {
+    color: #212529; /* Dark icon color */
+}
+
+.header-icons a:hover {
+    color: #dc3545; /* Red on hover */
+}
+
+.header-icons .badge {
+    font-size: 0.6em;
+    padding: 0.3em 0.4em; /* Adjust badge padding */
+    transform: translate(50%, -50%); /* Fine-tune badge position */
+}
+
+/* --- Main Navigation Bar --- */
+.main-navbar {
+    background-color: #ea4c3c; /* Specific Red from image */
+}
+
+.main-navbar .nav-link {
+    color: #ffffff; /* White text */
+    padding: 0.8rem 1rem;
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: 700; /* Bold */
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active,
+.main-navbar .nav-item.show .nav-link { /* Style for active/hover/open dropdown */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background on interaction */
+}
+
+.main-navbar .dropdown-menu {
+    border-radius: 0; /* Square corners for dropdown */
+    border: none;
+    margin-top: 0; /* Align dropdown directly below */
+    font-size: 0.9rem;
+}
+
+.main-navbar .dropdown-item {
+     color: #333;
+     padding: 0.5rem 1rem;
+     text-transform: none; /* Normal case for dropdown items */
+     font-weight: 400; /* Normal weight */
+}
+.main-navbar .dropdown-item:hover,
+.main-navbar .dropdown-item:focus {
+    background-color: #f8f9fa; /* Light grey hover */
+    color: #ea4c3c; /* Red text on hover */
+}
+
+/* --- Responsiveness Adjustments --- */
+
+/* Make search bar take more width on smaller screens before collapsing */
+@media (max-width: 991.98px) {
+    .search-form {
+        max-width: none; /* Allow full width */
+        order: 3; /* Move search below logo and icons */
+        width: 100%; /* Take full width */
+        margin-top: 1rem !important; /* Add space above */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .middle-header > .container {
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    .logo {
+        order: 1;
+    }
+    .header-icons {
+        order: 2;
+    }
+    .main-navbar .navbar-nav {
+        align-items: center; /* Center items in collapsed menu */
+    }
+    .main-navbar .nav-link {
+        padding: 0.5rem 1rem; /* Adjust padding for collapsed menu */
+        text-align: center;
+        width: 100%;
+    }
+     .main-navbar .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.1); /* Darker background for dropdown in mobile */
+        text-align: center;
+     }
+     .main-navbar .dropdown-item {
+        color: #fff; /* White text for mobile dropdown items */
+     }
+      .main-navbar .dropdown-item:hover,
+      .main-navbar .dropdown-item:focus {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #fff;
+      }
+}
+
+/* Hide top bar text on very small screens if needed */
+@media (max-width: 575.98px) {
+    .top-bar-left {
+        display: none; /* Hide completely */
+    }
+    .top-bar > .container {
+       justify-content: center; /* Center the right items */
+    }
+     .logo {
+        font-size: 2rem; /* Slightly smaller logo */
+     }
+     .header-icons .bi {
+        font-size: 1.2rem; /* Smaller icons */
+     }
+}
+/* Container */
+.container {
+    max-width: 1240px; /* Wider container */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Layout Wrapper - Flexbox for columns */
+.layout-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Space between main content and sidebar */
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1; /* Takes up most space */
+    min-width: 0; /* Important for flex item shrinking */
+}
+
+/* Sidebar Area */
+.sidebar {
+    flex: 0 0 300px; /* Fixed width sidebar */
+    background-color: #f8f8f8; /* Light grey background for sidebar */
+    padding: 25px 20px; /* Padding inside sidebar */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* --- Main Content: Posts Grid --- */
+.posts-grid {
+    display: grid; /* Use CSS Grid for main posts */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px;
+}
+
+/* Post Card Styling (Main Content) */
+.post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1);
+}
+
+.post-image-wrapper {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.post-image {
+    display: block;
+    width: 100%;
+    height: 200px; /* Adjust height */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.post-card:hover .post-image {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-meta i {
+    color: #e63946;
+}
+
+.post-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #e63946;
+}
+
+.read-more-button {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    padding: 9px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: #333;
+}
+
+
+/* --- Sidebar Widget Styling --- */
+.widget {
+    margin-bottom: 35px;
+}
+
+.widget:last-child {
+    margin-bottom: 0;
+}
+
+.widget-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee; /* Separator line */
+}
+
+/* Recent Posts Widget Specifics */
+.recent-posts-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-post-item {
+    margin-bottom: 18px;
+}
+.recent-post-item:last-child {
+    margin-bottom: 0;
+}
+
+.recent-post-item a {
+    display: flex;
+    align-items: flex-start; /* Align items to top */
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+.recent-post-item a:hover {
+    opacity: 0.8;
+}
+
+
+.recent-post-item img {
+    width: 65px; /* Thumbnail size */
+    height: 65px;
+    object-fit: cover;
+    border-radius: 5px; /* Rounded corners */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.recent-post-info {
+     display: flex;
+     flex-direction: column;
+}
+
+.recent-post-meta {
+    font-size: 0.75em;
+    color: #777;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.recent-post-meta i {
+    color: #e63946;
+    font-size: 0.9em;
+}
+
+.recent-post-title {
+    font-size: 0.9em;
+    font-weight: 500; /* Medium weight */
+    color: #444;
+    line-height: 1.4;
+}
+
+/* Archives Widget Specifics */
+.archives-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archives-widget li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd; /* Dashed separator */
+}
+.archives-widget li:last-child {
+     margin-bottom: 0;
+     padding-bottom: 0;
+     border-bottom: none;
+}
+
+
+.archives-widget a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.archives-widget a:hover {
+    color: #e63946; /* Red hover */
+}
+
+
+/* --- Animation Styles --- */
+.animate-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.is-visible .animate-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+    .sidebar {
+        flex-basis: 250px; /* Narrower sidebar */
+    }
+    .posts-grid {
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .layout-wrapper {
+        flex-direction: column; /* Stack sidebar below main content */
+    }
+    .sidebar {
+        flex-basis: auto; /* Reset basis */
+        width: 100%; /* Take full width */
+    }
+     .posts-grid {
+        /* Could revert to 2 columns here if desired, or keep auto-fit */
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+     body {
+         padding: 30px 0;
+     }
+      .posts-grid {
+        /* Force 1 column */
+        grid-template-columns: 1fr;
+        gap: 20px;
+     }
+     .post-card {
+         max-width: none; /* Allow card to fill column */
+     }
+}
+/* --- Footer Section --- */
+.footer-section {
+    background-color: #2c303a; /* Dark background color */
+    color: #adb5bd; /* Default light grey text color */
+    font-size: 0.9rem;
+}
+
+.footer-widget {
+    margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff; /* White logo */
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.footer-about-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.widget-title {
+    color: #ffffff; /* White widget titles */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+    margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+    color: #adb5bd; /* Link color */
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+    color: #ffffff; /* White on hover */
+    padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+    line-height: 1.7;
+}
+
+.footer-social-icons a {
+    display: inline-flex; /* Use flex for centering */
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: #adb5bd; /* Icon color */
+    border-radius: 6px; /* Slightly rounded square */
+    margin-right: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background-color: #ea4c3c; /* Theme red background on hover */
+    color: #ffffff; /* White icon on hover */
+}
+
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+    .footer-section {
+        text-align: center; /* Center align widgets on mobile */
+    }
+    .footer-social-icons {
+        justify-content: center; /* Center social icons */
+    }
+    .footer-logo {
+        font-size: 2.2rem;
+    }
+     .widget-title {
+        font-size: 1rem;
+     }
+}

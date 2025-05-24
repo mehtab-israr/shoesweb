@@ -1,0 +1,465 @@
+/* Import a Google Font (Example: Montserrat) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif; /* Apply the font */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: #f8f9fa; /* Light grey background */
+  font-size: 0.8rem; /* Smaller font size */
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar-right a {
+  color: #6c757d; /* Muted text color */
+  transition: color 0.2s ease-in-out;
+}
+
+.top-bar-right a:hover {
+  color: #dc3545; /* Red color on hover */
+}
+
+.top-bar-right .bi {
+  vertical-align: middle;
+}
+
+/* --- Middle Header --- */
+.middle-header {
+  background-color: white; /* White background */
+}
+
+.logo {
+  font-size: 2.8rem; /* Larger font size */
+  font-weight: 900; /* Very bold */
+  color: #212529; /* Dark color */
+  text-decoration: none;
+  letter-spacing: -2px; /* Tighten letter spacing slightly */
+  line-height: 1;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.search-form {
+  max-width: 500px; /* Limit search bar width on larger screens */
+}
+
+.search-form .form-control {
+  border-right: none; /* Remove border between input and button */
+}
+
+.search-form .form-control:focus {
+  box-shadow: none; /* Remove focus glow */
+  border-color: #ced4da; /* Keep standard border color on focus */
+}
+
+.search-form .btn-danger {
+  border: 1px solid #dc3545; /* Add border to match input */
+  background-color: #dc3545; /* Red background */
+}
+
+.header-icons a {
+  color: #212529; /* Dark icon color */
+}
+
+.header-icons a:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+.header-icons .badge {
+  font-size: 0.6em;
+  padding: 0.3em 0.4em; /* Adjust badge padding */
+  transform: translate(50%, -50%); /* Fine-tune badge position */
+}
+
+/* --- Main Navigation Bar --- */
+.main-navbar {
+  background-color: #ea4c3c; /* Specific Red from image */
+}
+
+.main-navbar .nav-link {
+  color: #ffffff; /* White text */
+  padding: 0.8rem 1rem;
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 700; /* Bold */
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active,
+.main-navbar .nav-item.show .nav-link {
+  /* Style for active/hover/open dropdown */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slightly darker background on interaction */
+}
+
+.main-navbar .dropdown-menu {
+  border-radius: 0; /* Square corners for dropdown */
+  border: none;
+  margin-top: 0; /* Align dropdown directly below */
+  font-size: 0.9rem;
+}
+
+.main-navbar .dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-transform: none; /* Normal case for dropdown items */
+  font-weight: 400; /* Normal weight */
+}
+.main-navbar .dropdown-item:hover,
+.main-navbar .dropdown-item:focus {
+  background-color: #f8f9fa; /* Light grey hover */
+  color: #ea4c3c; /* Red text on hover */
+}
+
+/* --- Responsiveness Adjustments --- */
+
+/* Make search bar take more width on smaller screens before collapsing */
+@media (max-width: 991.98px) {
+  .search-form {
+    max-width: none; /* Allow full width */
+    order: 3; /* Move search below logo and icons */
+    width: 100%; /* Take full width */
+    margin-top: 1rem !important; /* Add space above */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .middle-header > .container {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  .logo {
+    order: 1;
+  }
+  .header-icons {
+    order: 2;
+  }
+  .main-navbar .navbar-nav {
+    align-items: center; /* Center items in collapsed menu */
+  }
+  .main-navbar .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding for collapsed menu */
+    text-align: center;
+    width: 100%;
+  }
+  .main-navbar .dropdown-menu {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.1
+    ); /* Darker background for dropdown in mobile */
+    text-align: center;
+  }
+  .main-navbar .dropdown-item {
+    color: #fff; /* White text for mobile dropdown items */
+  }
+  .main-navbar .dropdown-item:hover,
+  .main-navbar .dropdown-item:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+}
+
+/* Hide top bar text on very small screens if needed */
+@media (max-width: 575.98px) {
+  .top-bar-left {
+    display: none; /* Hide completely */
+  }
+  .top-bar > .container {
+    justify-content: center; /* Center the right items */
+  }
+  .logo {
+    font-size: 2rem; /* Slightly smaller logo */
+  }
+  .header-icons .bi {
+    font-size: 1.2rem; /* Smaller icons */
+  }
+}
+/* Container */
+.container {
+  max-width: 1200px; /* Wider container for 3 cards */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Optional Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Posts Grid */
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between cards */
+  justify-content: center; /* Center cards */
+}
+
+/* Post Card Styling */
+.post-card {
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners for the card */
+  overflow: hidden; /* Clip contents */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  display: flex;
+  flex-direction: column; /* Stack image and content */
+  flex: 1 1 350px; /* Flex properties: grow, shrink, base width */
+  max-width: 380px; /* Max width per card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Stronger shadow on hover */
+}
+
+/* Image Wrapper */
+.post-image-wrapper {
+  border-radius: 8px 8px 0 0; /* Match card top corners */
+  overflow: hidden; /* Ensure image is clipped */
+}
+
+.post-image {
+  display: block;
+  width: 100%;
+  height: 220px; /* Fixed height for image */
+  object-fit: cover; /* Cover the area without distortion */
+  transition: transform 0.4s ease;
+}
+
+.post-card:hover .post-image {
+  transform: scale(1.05); /* Zoom image slightly on card hover */
+}
+
+/* Post Content Area */
+.post-content {
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content area to grow and push button down */
+}
+
+/* Metadata */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  gap: 15px; /* Space between items */
+  margin-bottom: 15px;
+  font-size: 0.85em;
+  color: #555;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Space between icon and text */
+}
+
+.post-meta i {
+  color: #e63946; /* Red icons */
+  font-size: 0.9em; /* Slightly smaller icon */
+}
+
+/* Post Title */
+.post-title {
+  font-size: 1.3em; /* Adjust title size */
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Take up space before the button */
+}
+
+.post-title a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from h3 */
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: #e63946; /* Red hover for title */
+}
+
+/* Read More Button */
+.read-more-button {
+  display: inline-block;
+  background-color: #111; /* Black button */
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: auto; /* Pushes button to bottom */
+  align-self: flex-start; /* Keep button left-aligned */
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #333; /* Slightly lighter black on hover */
+}
+
+/* --- Animation Styles --- */
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+  .post-card {
+    flex-basis: 320px; /* Adjust basis */
+    max-width: 340px;
+  }
+  .post-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .posts-grid {
+    gap: 25px;
+  }
+  /* Go to 2 columns */
+  .post-card {
+    flex: 1 1 calc(50% - 15px); /* Adjust calculation based on gap */
+    max-width: calc(50% - 15px);
+  }
+  .post-title {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 30px 0;
+  }
+  /* Stack to 1 column */
+  .post-card {
+    flex: 1 1 90%;
+    max-width: 380px; /* Max width on small screens */
+    margin: 0 auto; /* Center card */
+  }
+  .post-image {
+    height: 210px; /* Can make image slightly taller */
+  }
+  .post-title {
+    font-size: 1.25em;
+  }
+}
+/* --- Footer Section --- */
+.footer-section {
+  background-color: #2c303a; /* Dark background color */
+  color: #adb5bd; /* Default light grey text color */
+  font-size: 0.9rem;
+}
+
+.footer-widget {
+  margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff; /* White logo */
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.footer-about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.widget-title {
+  color: #ffffff; /* White widget titles */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+  margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+  color: #adb5bd; /* Link color */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff; /* White on hover */
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+  line-height: 1.7;
+}
+
+.footer-social-icons a {
+  display: inline-flex; /* Use flex for centering */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #adb5bd; /* Icon color */
+  border-radius: 6px; /* Slightly rounded square */
+  margin-right: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #ea4c3c; /* Theme red background on hover */
+  color: #ffffff; /* White icon on hover */
+}
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .footer-section {
+    text-align: center; /* Center align widgets on mobile */
+  }
+  .footer-social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+  }
+}

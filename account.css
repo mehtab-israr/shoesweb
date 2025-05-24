@@ -1,0 +1,442 @@
+/* Import a Google Font (Example: Montserrat) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif; /* Apply the font */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: #f8f9fa; /* Light grey background */
+  font-size: 0.8rem; /* Smaller font size */
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar-right a {
+  color: #6c757d; /* Muted text color */
+  transition: color 0.2s ease-in-out;
+}
+
+.top-bar-right a:hover {
+  color: #dc3545; /* Red color on hover */
+}
+
+.top-bar-right .bi {
+  vertical-align: middle;
+}
+
+/* --- Middle Header --- */
+.middle-header {
+  background-color: white; /* White background */
+}
+
+.logo {
+  font-size: 2.8rem; /* Larger font size */
+  font-weight: 900; /* Very bold */
+  color: #212529; /* Dark color */
+  text-decoration: none;
+  letter-spacing: -2px; /* Tighten letter spacing slightly */
+  line-height: 1;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.search-form {
+  max-width: 500px; /* Limit search bar width on larger screens */
+}
+
+.search-form .form-control {
+  border-right: none; /* Remove border between input and button */
+}
+
+.search-form .form-control:focus {
+  box-shadow: none; /* Remove focus glow */
+  border-color: #ced4da; /* Keep standard border color on focus */
+}
+
+.search-form .btn-danger {
+  border: 1px solid #dc3545; /* Add border to match input */
+  background-color: #dc3545; /* Red background */
+}
+
+.header-icons a {
+  color: #212529; /* Dark icon color */
+}
+
+.header-icons a:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+.header-icons .badge {
+  font-size: 0.6em;
+  padding: 0.3em 0.4em; /* Adjust badge padding */
+  transform: translate(50%, -50%); /* Fine-tune badge position */
+}
+
+/* --- Main Navigation Bar --- */
+.main-navbar {
+  background-color: #ea4c3c; /* Specific Red from image */
+}
+
+.main-navbar .nav-link {
+  color: #ffffff; /* White text */
+  padding: 0.8rem 1rem;
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 700; /* Bold */
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active,
+.main-navbar .nav-item.show .nav-link {
+  /* Style for active/hover/open dropdown */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slightly darker background on interaction */
+}
+
+.main-navbar .dropdown-menu {
+  border-radius: 0; /* Square corners for dropdown */
+  border: none;
+  margin-top: 0; /* Align dropdown directly below */
+  font-size: 0.9rem;
+}
+
+.main-navbar .dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-transform: none; /* Normal case for dropdown items */
+  font-weight: 400; /* Normal weight */
+}
+.main-navbar .dropdown-item:hover,
+.main-navbar .dropdown-item:focus {
+  background-color: #f8f9fa; /* Light grey hover */
+  color: #ea4c3c; /* Red text on hover */
+}
+
+/* --- Responsiveness Adjustments --- */
+
+/* Make search bar take more width on smaller screens before collapsing */
+@media (max-width: 991.98px) {
+  .search-form {
+    max-width: none; /* Allow full width */
+    order: 3; /* Move search below logo and icons */
+    width: 100%; /* Take full width */
+    margin-top: 1rem !important; /* Add space above */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .middle-header > .container {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  .logo {
+    order: 1;
+  }
+  .header-icons {
+    order: 2;
+  }
+  .main-navbar .navbar-nav {
+    align-items: center; /* Center items in collapsed menu */
+  }
+  .main-navbar .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding for collapsed menu */
+    text-align: center;
+    width: 100%;
+  }
+  .main-navbar .dropdown-menu {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.1
+    ); /* Darker background for dropdown in mobile */
+    text-align: center;
+  }
+  .main-navbar .dropdown-item {
+    color: #fff; /* White text for mobile dropdown items */
+  }
+  .main-navbar .dropdown-item:hover,
+  .main-navbar .dropdown-item:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+}
+
+/* Hide top bar text on very small screens if needed */
+@media (max-width: 575.98px) {
+  .top-bar-left {
+    display: none; /* Hide completely */
+  }
+  .top-bar > .container {
+    justify-content: center; /* Center the right items */
+  }
+  .logo {
+    font-size: 2rem; /* Slightly smaller logo */
+  }
+  .header-icons .bi {
+    font-size: 1.2rem; /* Smaller icons */
+  }
+}
+/* --- Footer Section --- */
+.footer-section {
+  background-color: #2c303a; /* Dark background color */
+  color: #adb5bd; /* Default light grey text color */
+  font-size: 0.9rem;
+}
+
+.footer-widget {
+  margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff; /* White logo */
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.footer-about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.widget-title {
+  color: #ffffff; /* White widget titles */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+  margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+  color: #adb5bd; /* Link color */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff; /* White on hover */
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+  line-height: 1.7;
+}
+
+.footer-social-icons a {
+  display: inline-flex; /* Use flex for centering */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #adb5bd; /* Icon color */
+  border-radius: 6px; /* Slightly rounded square */
+  margin-right: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #ea4c3c; /* Theme red background on hover */
+  color: #ffffff; /* White icon on hover */
+}
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .footer-section {
+    text-align: center; /* Center align widgets on mobile */
+  }
+  .footer-social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+  }
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 30px; /* Space between nav and content */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Sidebar Navigation */
+.dashboard-nav {
+  flex: 0 0 240px; /* Don't grow, don't shrink, fixed width */
+  background-color: #fff;
+  border: 1px solid #e5e5e5; /* Subtle border */
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-nav li {
+  /* No specific style needed here */
+}
+
+.dashboard-nav a {
+  display: block;
+  padding: 13px 20px; /* Vertical and horizontal padding */
+  text-decoration: none;
+  color: #333; /* Default text color */
+  font-size: 0.95em;
+  border-bottom: 1px solid #e5e5e5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove border from last item */
+.dashboard-nav li:last-child a {
+  border-bottom: none;
+}
+
+.dashboard-nav a:hover {
+  background-color: #f5f5f5; /* Light grey hover */
+  color: #111;
+}
+
+/* Active link style */
+.dashboard-nav a.active,
+.dashboard-nav a[aria-current="page"] {
+  background-color: #e63946; /* Red background */
+  color: #fff;
+  font-weight: 700; /* Slightly bolder */
+}
+
+/* Hover state for active link */
+.dashboard-nav a.active:hover,
+.dashboard-nav a[aria-current="page"]:hover {
+  background-color: #d62839; /* Darker red */
+}
+
+/* Main Content Area */
+.dashboard-content {
+  flex: 1; /* Take remaining space */
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 25px 30px; /* Internal padding */
+}
+
+.dashboard-content h2 {
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.content-separator {
+  border: none;
+  border-top: 1px dashed #ccc; /* Dashed line */
+  margin: 15px 0 20px 0; /* Spacing above and below */
+}
+
+.dashboard-content p {
+  margin-bottom: 1em;
+  color: #555; /* Slightly lighter text */
+  font-size: 0.98em;
+  line-height: 1.7;
+}
+
+.dashboard-content p strong {
+  font-weight: 700;
+  color: #333; /* Darker color for emphasis */
+}
+
+.dashboard-content p a.logout-link {
+  color: #e63946; /* Red link */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.dashboard-content p a.logout-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Animation Styles --- */
+.animate-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+  .dashboard-container {
+    gap: 20px; /* Reduce gap */
+  }
+  .dashboard-nav {
+    flex-basis: 200px; /* Slightly narrower nav */
+  }
+  .dashboard-content h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-container {
+    flex-direction: column; /* Stack nav and content */
+  }
+  .dashboard-nav {
+    flex-basis: auto; /* Reset basis */
+    width: 100%; /* Take full width */
+    margin-bottom: 20px; /* Space below nav when stacked */
+  }
+  .dashboard-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 0; /* Reduce body padding */
+  }
+  .dashboard-nav a {
+    padding: 12px 15px; /* Adjust padding */
+    font-size: 0.9em;
+  }
+  .dashboard-content {
+    padding: 20px 20px; /* Adjust padding */
+  }
+  .dashboard-content h2 {
+    font-size: 1.3em;
+  }
+  .dashboard-content p {
+    font-size: 0.95em;
+  }
+}

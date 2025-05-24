@@ -1,0 +1,910 @@
+/* about sec */
+/* Basic Reset & Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Use the linked font */
+  line-height: 1.6;
+  color: #333; /* Default text color */
+  overflow-x: hidden; /* Prevent horizontal scrollbars during animation */
+}
+
+/* Container for max-width and centering */
+.container {
+  max-width: 1140px; /* Standard container width */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Padding on the sides */
+}
+
+/* Section Styling */
+.smart-shoes-section {
+  padding: 80px 0; /* Vertical padding for the section */
+  background-color: #fff; /* White background */
+  overflow: hidden; /* Important for containing animations */
+}
+
+/* Flexbox Wrapper for Columns */
+.content-wrapper {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  gap: 50px; /* Space between columns */
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+/* Column Styling */
+.image-column,
+.text-column {
+  flex: 1; /* Each column takes up half the space */
+  min-width: 300px; /* Minimum width before wrapping */
+}
+
+/* Image Specific Styling */
+.image-column {
+  position: relative; /* For positioning the pseudo-element */
+  display: flex; /* Helps center if needed */
+  justify-content: center; /* Center image container if column wider */
+  align-items: center;
+}
+
+.image-container {
+  position: relative; /* For positioning the frame */
+  padding: 20px; /* Add space around image FOR the frame */
+  max-width: 100%; /* Ensure container doesn't overflow */
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: relative; /* To ensure it's above the ::before */
+  z-index: 2;
+  transform: scale(1.1); /* Slightly larger to overlap frame edge */
+}
+
+/* The Grey Frame using ::before */
+.image-container::before {
+  content: "";
+  position: absolute;
+  /* Position slightly outside the padding */
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  z-index: 1; /* Behind the image */
+}
+
+/* Text Column Styling */
+.text-column {
+  color: #555; /* Slightly muted text color */
+}
+
+.section-headline {
+  font-size: 2.8em; /* Large headline */
+  font-weight: 400; /* Regular weight for "Smart Life" */
+  color: #333; /* Darker headline color */
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.section-headline strong {
+  font-weight: 700; /* Bold weight for "With Smart Shoes" */
+  display: block; /* Ensure it takes its own line */
+}
+
+.section-description {
+  font-size: 1em;
+  margin-bottom: 30px;
+  color: #666; /* Slightly lighter paragraph text */
+}
+
+/* Call to Action Button */
+.cta-button {
+  display: inline-block;
+  background-color: #e63946; /* Red button color */
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #d62839; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* --- Animation Styles --- */
+/* Initial state for elements to be animated */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Add different delays for a staggered effect */
+.image-column.animate-on-scroll {
+  transition-delay: 0.1s;
+}
+.text-column.animate-on-scroll .section-headline {
+  transition-delay: 0.2s;
+}
+.text-column.animate-on-scroll .section-description {
+  transition-delay: 0.3s;
+}
+.text-column.animate-on-scroll .cta-button {
+  transition-delay: 0.4s;
+}
+
+/* You might need nested selectors if you animate individual text elements */
+.text-column .section-headline,
+.text-column .section-description,
+.text-column .cta-button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* The state when the element becomes visible */
+.animate-on-scroll.is-visible,
+.animate-on-scroll.is-visible .section-headline,
+.animate-on-scroll.is-visible .section-description,
+.animate-on-scroll.is-visible .cta-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsiveness --- */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .section-headline {
+    font-size: 2.4em;
+  }
+  .content-wrapper {
+    gap: 30px; /* Reduce gap */
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 767px) {
+  .smart-shoes-section {
+    padding: 50px 0; /* Reduce section padding */
+  }
+  .content-wrapper {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 40px; /* Adjust gap for stacked layout */
+  }
+  .image-column {
+    order: 1; /* Keep image first (or set to 2 if text should be first) */
+  }
+  .text-column {
+    order: 2;
+    text-align: center; /* Center text when stacked */
+  }
+  .section-headline {
+    font-size: 2.1em;
+  }
+  .image-container {
+    padding: 15px; /* Adjust padding for frame */
+  }
+}
+
+/* Hero Banner Section */
+.hero-banner {
+  position: relative; /* Needed for absolute positioning inside */
+  background-color: #f8f8f8; /* Light grey background for the left */
+  overflow: hidden; /* Crucial for clip-path and animations */
+  min-height: 450px; /* Minimum height, adjust as needed */
+  display: flex;
+}
+
+.banner-wrapper {
+  display: flex;
+  width: 100%;
+  position: relative; /* Context for absolute children if needed */
+}
+
+/* Left Content Area */
+.banner-content {
+  flex: 1 1 55%; /* Takes up slightly more space */
+  padding: 60px 5% 60px 10%; /* Generous padding, especially left */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* For z-index if needed */
+  z-index: 2; /* Ensures text is above the red background potentially */
+  background-color: #f8f8f8; /* Explicit background */
+
+  /* Diagonal Cut - Adjust polygon points carefully */
+  /* Format: polygon(top-left, top-right, bottom-right, bottom-left) */
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  /* -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); */ /* Safari */
+}
+
+.text-content {
+  max-width: 500px; /* Limit text width */
+}
+
+.emphasis-text {
+  color: #e63946; /* Red color */
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.main-headline {
+  font-size: 3.5em;
+  font-weight: 800; /* Extra bold */
+  color: #2b2d42; /* Dark grey/black */
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.sub-text {
+  font-size: 0.9em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}
+
+/* Shop Now Button */
+.cta-button {
+  display: inline-block;
+  background-color: #e63946; /* Red button color */
+  color: #fff;
+  padding: 12px 35px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #d62839; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+/* Right Visual Area */
+.banner-visuals {
+  flex: 1 1 45%; /* Takes up slightly less space */
+  position: relative; /* For absolute positioning of children */
+  background-color: #e63946; /* Red background */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  z-index: 1; /* Behind the content clip-path edge */
+
+  /* Halftone pattern - subtle */
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1.5px
+  );
+  background-size: 15px 15px; /* Adjust size of dots and spacing */
+  background-position: bottom right; /* Position it */
+
+  /* Matching diagonal cut, offset from the left side's cut */
+  /* This requires careful adjustment to look seamless */
+  /* It's often easier to just let the background show through */
+  /* If needed: clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%); */
+}
+
+/* Shoe Image */
+.shoe-image {
+  display: block;
+  max-width: 90%; /* Adjust size relative to container */
+  max-height: 400px; /* Max height constraint */
+  height: auto;
+  position: relative; /* Or absolute if precise positioning needed */
+  z-index: 3; /* Above the background, potentially above 'NEW' */
+  transform: rotate(-10deg) translateX(-10%); /* Slight rotation and shift */
+  filter: drop-shadow(5px 10px 15px rgba(0, 0, 0, 0.2)); /* Optional shadow */
+}
+
+/* Diagonal "NEW" Text */
+.new-label {
+  position: absolute;
+  top: 50%; /* Start vertical positioning from center */
+  left: 10%; /* Adjust horizontal position */
+  transform: rotate(-55deg) translateY(-50%); /* Rotate and adjust vertical center */
+  transform-origin: center;
+  font-size: 6em; /* Large text */
+  font-weight: 800;
+  color: transparent; /* Make text transparent */
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8); /* Outline effect (Safari) */
+  text-stroke: 2px rgba(255, 255, 255, 0.8); /* Outline effect (Standard) */
+  /* Fallback for browsers without text-stroke (less accurate) */
+  /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; */
+  letter-spacing: 5px;
+  z-index: 2; /* Behind shoes maybe, adjust as needed */
+  opacity: 0.7; /* Slightly transparent outline */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* --- Animation Styles --- */
+.animate-section {
+  /* Container for animation detection */
+}
+
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px); /* Default starting position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Add specific transforms if desired */
+.shoe-image.animate-item {
+  transform: rotate(-10deg) translateX(-10%) translateY(40px) scale(0.95); /* Start lower and smaller */
+}
+.new-label.animate-item {
+  transform: rotate(-55deg) translateY(-50%) scale(0.9); /* Start smaller */
+}
+
+/* Visible state */
+.animate-section.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0); /* End at normal position */
+}
+/* Reset transforms for specific items */
+.animate-section.is-visible .shoe-image.animate-item {
+  transform: rotate(-10deg) translateX(-10%) translateY(0) scale(1);
+}
+.animate-section.is-visible .new-label.animate-item {
+  transform: rotate(-55deg) translateY(-50%) scale(1);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+  .main-headline {
+    font-size: 2.8em;
+  }
+  .emphasis-text {
+    font-size: 1.2em;
+  }
+  .shoe-image {
+    max-width: 80%;
+    transform: rotate(-5deg) translateX(-5%); /* Less dramatic angle */
+  }
+  .new-label {
+    font-size: 5em;
+    left: 5%;
+  }
+  .banner-content {
+    /* Less steep angle */
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    /* -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); */
+    padding: 50px 5% 50px 8%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-banner {
+    min-height: auto; /* Let height be determined by content */
+  }
+  .banner-wrapper {
+    flex-direction: column; /* Stack elements */
+  }
+  .banner-content,
+  .banner-visuals {
+    flex: 1 1 auto; /* Reset flex basis */
+    clip-path: none !important; /* Remove clip-path on small screens */
+    -webkit-clip-path: none !important;
+    width: 100%;
+  }
+  .banner-content {
+    padding: 40px 20px;
+    text-align: center;
+    order: 2; /* Text below image */
+  }
+  .text-content {
+    max-width: none; /* Allow text to fill width */
+    margin: 0 auto; /* Center text block */
+  }
+  .main-headline {
+    font-size: 2.2em;
+  }
+  .emphasis-text {
+    font-size: 1.1em;
+  }
+  .sub-text {
+    font-size: 0.8em;
+    margin-bottom: 25px;
+  }
+
+  .banner-visuals {
+    order: 1; /* Image above text */
+    min-height: 300px; /* Give image area some height */
+    padding: 30px 20px;
+    background-size: 12px 12px; /* Adjust dots */
+    background-position: center bottom; /* Center dots */
+  }
+  .shoe-image {
+    max-width: 70%;
+    max-height: 250px;
+    transform: rotate(0deg) translateX(0); /* Reset rotation/position */
+    margin: 0 auto; /* Center image */
+    filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.15));
+  }
+  .new-label {
+    /* Optionally hide or reposition */
+    font-size: 4em;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-15deg); /* Center and slight rotate */
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+    opacity: 0.5;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Team Section Styling */
+.team-section {
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden; /* Contain animations */
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px; /* More space before the grid */
+}
+
+.section-title {
+  font-size: 2.8em; /* Adjust size */
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1em;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto; /* Center the subtitle */
+}
+
+/* Team Grid */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center cards horizontally */
+  gap: 30px; /* Space between cards */
+}
+
+/* Team Member Card */
+.team-member-card {
+  flex: 0 1 250px; /* Flex properties: don't grow, shrink allowed, base width */
+  max-width: 250px; /* Max width for consistency */
+  text-align: center;
+  margin-bottom: 20px; /* Space below card if grid wraps */
+}
+
+/* Image Wrapper & Hover Effect */
+.member-image-wrapper {
+  position: relative; /* For absolute positioning of overlay */
+  width: 180px; /* Fixed width for the circle */
+  height: 180px; /* Fixed height for the circle */
+  margin: 0 auto 20px auto; /* Center the circle and add space below */
+  border-radius: 50%;
+  overflow: hidden; /* Clip image and overlay to the circle */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area without distortion */
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth zoom */
+}
+
+/* Social Icons Overlay */
+.social-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 40, 40, 0.6); /* Darker semi-transparent overlay */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease;
+}
+
+/* Social Links List */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px; /* Space between icons */
+}
+
+.social-links li {
+  /* Individual icon animation */
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Stagger icon animation on hover */
+.member-image-wrapper:hover .social-links li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.member-image-wrapper:hover .social-links li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.member-image-wrapper:hover .social-links li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+/* Add more nth-child rules if more icons */
+
+/* Individual Social Link */
+.social-links a {
+  display: flex; /* Use flex to center icon */
+  justify-content: center;
+  align-items: center;
+  width: 38px; /* Size of the icon background */
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.15); /* Faint background */
+  color: #fff; /* White icon */
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1em; /* Icon size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Brighter background on hover */
+  transform: scale(1.1); /* Slightly enlarge icon */
+}
+
+/* Hover effects - Show overlay and animate icons */
+.team-member-card:hover .member-image-wrapper .social-overlay {
+  opacity: 1;
+}
+
+.team-member-card:hover .member-image-wrapper .social-links li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Optional: Zoom image slightly on hover */
+.team-member-card:hover .member-image-wrapper .member-photo {
+  transform: scale(1.08);
+}
+
+/* Member Info */
+.member-info {
+  padding: 0 10px;
+}
+
+.member-name {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 0.85em;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Animation Styles --- */
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.4em;
+  }
+  .team-member-card {
+    flex: 0 1 220px; /* Slightly smaller base width */
+    max-width: 220px;
+  }
+  .member-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 2.1em;
+  }
+  .section-subtitle {
+    font-size: 0.95em;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .team-grid {
+    gap: 25px; /* Slightly reduce gap */
+  }
+  /* Allow 2 cards per row */
+  .team-member-card {
+    flex: 0 1 calc(50% - 15px); /* Adjust calculation based on gap */
+    max-width: calc(50% - 15px);
+  }
+  .member-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8em;
+  }
+  .section-subtitle {
+    font-size: 0.9em;
+  }
+  /* Stack cards */
+  .team-member-card {
+    flex: 0 1 80%; /* Allow card to be wider */
+    max-width: 280px; /* Limit max width even when stacked */
+  }
+  .member-image-wrapper {
+    width: 170px; /* Can make image larger again */
+    height: 170px;
+  }
+} /* --- Client Feedback Section --- */
+.client-feedback-section {
+  background-color: #ffffff; /* Or your page background */
+}
+
+.testimonial-card {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 10px;
+  padding: 2.5rem; /* Generous padding */
+  padding-left: 3rem; /* Extra left padding */
+  position: relative; /* For avatar and quote symbol positioning */
+  min-height: 200px; /* Ensure some height */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Make cards in same row equal height */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-avatar {
+  width: 70px; /* Avatar size */
+  height: 70px;
+  border-radius: 50%; /* Circular */
+  border: 3px solid #fff; /* White border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  object-fit: cover; /* Ensure image covers space */
+  position: absolute;
+  top: 2.5rem; /* Align with top padding */
+  left: -35px; /* Half of width to pull outside */
+  z-index: 2; /* Above quote symbol */
+}
+
+.testimonial-body {
+  position: relative; /* For quote symbol */
+  padding-left: 50px; /* Space for avatar + extra */
+  min-height: 70px; /* Match avatar height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+/* Quote Symbol */
+.testimonial-body::before {
+  content: "\201C"; /* Left double quotation mark */
+  font-family: Georgia, serif; /* Use a serif font for quotes */
+  font-size: 5rem; /* Large size */
+  font-weight: bold;
+  color: rgba(234, 76, 60, 0.15); /* Very faint theme red */
+  position: absolute;
+  top: -10px; /* Adjust vertical position */
+  left: 40px; /* Adjust horizontal position */
+  line-height: 1;
+  z-index: 1; /* Behind avatar */
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  color: #495057; /* Text color */
+  line-height: 1.7;
+  margin-bottom: 1.5rem; /* Space before author */
+  position: relative; /* Ensure text is above quote mark */
+  z-index: 2;
+}
+
+.testimonial-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ea4c3c; /* Theme red */
+  margin-bottom: 0;
+  position: relative; /* Ensure text is above quote mark */
+  z-index: 2;
+}
+
+/* Dash before author name */
+.testimonial-author::before {
+  content: "\2014"; /* Em dash */
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+/* --- Animation (Reused) --- */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: var(--anim-delay, 0s); /* Use CSS variable for delay */
+}
+
+.anim-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .testimonial-card {
+    padding: 2rem;
+    padding-top: 4rem; /* More top padding to make space for avatar */
+    text-align: center; /* Center text */
+  }
+  .testimonial-avatar {
+    top: -35px; /* Pull avatar above */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+  }
+  .testimonial-body {
+    padding-left: 0; /* Remove left padding */
+    text-align: center;
+  }
+  .testimonial-body::before {
+    /* Adjust quote position for centered layout */
+    top: -5px;
+    left: 10px;
+    font-size: 4rem;
+  }
+  .testimonial-quote {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 575.98px) {
+  /* Use col-10 offset-1 to center single column card slightly */
+  .client-feedback-section .row > [class*="col-"]:first-child:last-child {
+    /* If only one card is present */
+    /* max-width: 83.333333%; */ /* col-10 width */
+    /* margin-left: 8.333333%; */ /* offset-1 */
+  }
+}
+/* --- Footer Section --- */
+.footer-section {
+  background-color: #2c303a; /* Dark background color */
+  color: #adb5bd; /* Default light grey text color */
+  font-size: 0.9rem;
+}
+
+.footer-widget {
+  margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff; /* White logo */
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.footer-about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.widget-title {
+  color: #ffffff; /* White widget titles */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+  margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+  color: #adb5bd; /* Link color */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff; /* White on hover */
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+  line-height: 1.7;
+}
+
+.footer-social-icons a {
+  display: inline-flex; /* Use flex for centering */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #adb5bd; /* Icon color */
+  border-radius: 6px; /* Slightly rounded square */
+  margin-right: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #ea4c3c; /* Theme red background on hover */
+  color: #ffffff; /* White icon on hover */
+}
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .footer-section {
+    text-align: center; /* Center align widgets on mobile */
+  }
+  .footer-social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+  }
+}
