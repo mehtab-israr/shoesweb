@@ -1,0 +1,1434 @@
+/* Import a Google Font (Example: Montserrat) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif; /* Apply the font */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: #f8f9fa; /* Light grey background */
+  font-size: 0.8rem; /* Smaller font size */
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar-right a {
+  color: #6c757d; /* Muted text color */
+  transition: color 0.2s ease-in-out;
+}
+
+.top-bar-right a:hover {
+  color: #dc3545; /* Red color on hover */
+}
+
+.top-bar-right .bi {
+  vertical-align: middle;
+}
+
+/* --- Middle Header --- */
+.middle-header {
+  background-color: white; /* White background */
+}
+
+.logo {
+  font-size: 2.8rem; /* Larger font size */
+  font-weight: 900; /* Very bold */
+  color: #212529; /* Dark color */
+  text-decoration: none;
+  letter-spacing: -2px; /* Tighten letter spacing slightly */
+  line-height: 1;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.search-form {
+  max-width: 500px; /* Limit search bar width on larger screens */
+}
+
+.search-form .form-control {
+  border-right: none; /* Remove border between input and button */
+}
+
+.search-form .form-control:focus {
+  box-shadow: none; /* Remove focus glow */
+  border-color: #ced4da; /* Keep standard border color on focus */
+}
+
+.search-form .btn-danger {
+  border: 1px solid #dc3545; /* Add border to match input */
+  background-color: #dc3545; /* Red background */
+}
+
+.header-icons a {
+  color: #212529; /* Dark icon color */
+}
+
+.header-icons a:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+.header-icons .badge {
+  font-size: 0.6em;
+  padding: 0.3em 0.4em; /* Adjust badge padding */
+  transform: translate(50%, -50%); /* Fine-tune badge position */
+}
+
+/* --- Main Navigation Bar --- */
+.main-navbar {
+  background-color: #ea4c3c; /* Specific Red from image */
+}
+
+.main-navbar .nav-link {
+  color: #ffffff; /* White text */
+  padding: 0.8rem 1rem;
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 700; /* Bold */
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active,
+.main-navbar .nav-item.show .nav-link {
+  /* Style for active/hover/open dropdown */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slightly darker background on interaction */
+}
+
+.main-navbar .dropdown-menu {
+  border-radius: 0; /* Square corners for dropdown */
+  border: none;
+  margin-top: 0; /* Align dropdown directly below */
+  font-size: 0.9rem;
+}
+
+.main-navbar .dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-transform: none; /* Normal case for dropdown items */
+  font-weight: 400; /* Normal weight */
+}
+.main-navbar .dropdown-item:hover,
+.main-navbar .dropdown-item:focus {
+  background-color: #f8f9fa; /* Light grey hover */
+  color: #ea4c3c; /* Red text on hover */
+}
+
+/* --- Responsiveness Adjustments --- */
+
+/* Make search bar take more width on smaller screens before collapsing */
+@media (max-width: 991.98px) {
+  .search-form {
+    max-width: none; /* Allow full width */
+    order: 3; /* Move search below logo and icons */
+    width: 100%; /* Take full width */
+    margin-top: 1rem !important; /* Add space above */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .middle-header > .container {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  .logo {
+    order: 1;
+  }
+  .header-icons {
+    order: 2;
+  }
+  .main-navbar .navbar-nav {
+    align-items: center; /* Center items in collapsed menu */
+  }
+  .main-navbar .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding for collapsed menu */
+    text-align: center;
+    width: 100%;
+  }
+  .main-navbar .dropdown-menu {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.1
+    ); /* Darker background for dropdown in mobile */
+    text-align: center;
+  }
+  .main-navbar .dropdown-item {
+    color: #fff; /* White text for mobile dropdown items */
+  }
+  .main-navbar .dropdown-item:hover,
+  .main-navbar .dropdown-item:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+}
+
+/* Hide top bar text on very small screens if needed */
+@media (max-width: 575.98px) {
+  .top-bar-left {
+    display: none; /* Hide completely */
+  }
+  .top-bar > .container {
+    justify-content: center; /* Center the right items */
+  }
+  .logo {
+    font-size: 2rem; /* Slightly smaller logo */
+  }
+  .header-icons .bi {
+    font-size: 1.2rem; /* Smaller icons */
+  }
+}
+/* --- Hero Slider Section --- */
+#heroCarousel {
+  position: relative;
+  width: 100%;
+  /* background-color: #333; */ /* Fallback color */
+}
+
+.carousel-item {
+  height: 60vh; /* Adjust height as needed */
+  min-height: 400px; /* Minimum height */
+  position: relative; /* Needed for overlay and caption positioning */
+}
+
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness (0.5 = 50% black) */
+  z-index: 1; /* Place overlay above background but below content */
+}
+
+.carousel-caption-custom {
+  position: relative; /* Change from absolute */
+  z-index: 2; /* Ensure content is above overlay */
+  padding-left: 15px; /* Add some padding from the edge */
+  padding-right: 15px;
+  color: #fff;
+  max-width: 50%; /* Limit width of the text block */
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-size: 3rem; /* Adjust size */
+  font-weight: 700; /* Bold */
+  margin-bottom: 0.2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero-title-strong {
+  font-weight: 900; /* Even bolder */
+}
+
+.btn-hero {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight transparent background */
+  border-radius: 0; /* Square button */
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* --- Custom Carousel Controls --- */
+.custom-control {
+  position: absolute;
+  bottom: 20px; /* Position from bottom */
+  z-index: 5; /* Above content */
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+.custom-control:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.custom-control.carousel-control-prev {
+  right: 70px; /* Position from right */
+  left: auto; /* Override default */
+}
+.custom-control.carousel-control-next {
+  right: 20px; /* Position from right */
+}
+
+/* --- Text Animation --- */
+.anim-target {
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly lower */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.carousel-item.active .anim-target.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsiveness Adjustments --- */
+@media (max-width: 991.98px) {
+  .carousel-item {
+    height: 50vh;
+    min-height: 350px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .carousel-caption-custom {
+    max-width: 70%; /* Allow more width */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item {
+    height: 45vh;
+    min-height: 300px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+  .btn-hero {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+  .carousel-caption-custom {
+    max-width: 90%; /* Use almost full width */
+    text-align: center !important; /* Center text */
+    align-items: center !important; /* Center button */
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .custom-control {
+    bottom: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  .custom-control.carousel-control-prev {
+    right: 55px;
+  }
+  .custom-control.carousel-control-next {
+    right: 10px;
+  }
+}
+/* --- Category Banners Section --- */
+.category-banners {
+  background-color: #f8f9fa; /* Optional: Light background for the section */
+}
+
+.banner-item {
+  display: block;
+  position: relative; /* Needed for absolute positioning inside */
+  overflow: hidden; /* Hides parts of background that zoom out */
+  height: 300px; /* Define a height for the banners */
+  border-radius: 5px; /* Optional: slightly rounded corners */
+  text-decoration: none;
+  color: #fff;
+  background-color: #333; /* Fallback background */
+  transition: box-shadow 0.3s ease;
+}
+
+.banner-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth zoom transition */
+  z-index: 1;
+}
+
+.banner-item:hover .banner-background {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust overlay darkness */
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.banner-item:hover .banner-overlay {
+  background-color: rgba(0, 0, 0, 0.55); /* Slightly darker overlay on hover */
+}
+
+.banner-content {
+  position: relative; /* Use relative to position within the flow */
+  z-index: 3; /* Above overlay */
+  height: 100%; /* Take full height of parent */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content to the bottom */
+  align-items: flex-start; /* Align content to the left */
+  padding: 1.5rem; /* Padding for the text */
+  text-align: left;
+}
+
+.banner-sale {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+}
+
+.banner-title {
+  font-size: 1.8rem;
+  font-weight: 700; /* Bold */
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* --- Banner Animation --- */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px); /* Start slightly lower */
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.anim-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+  .banner-item {
+    height: 250px; /* Slightly smaller height on tablets */
+  }
+  .banner-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Stack the third banner below the first two */
+  .category-banners .col-lg-4.col-md-6:nth-child(3) {
+    margin-left: auto; /* Centers the last item if only 1 in the row */
+    margin-right: auto;
+    max-width: 50%; /* Makes it align with the md-6 width */
+  }
+  /* If you prefer them to stack full width on mobile */
+  .category-banners .col-md-6 {
+    max-width: 100%; /* Override md-6 behaviour if needed */
+    width: 100%;
+  }
+  .banner-item {
+    height: 220px; /* Adjust height for mobile */
+  }
+  .banner-title {
+    font-size: 1.4rem;
+  }
+  .banner-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .banner-item {
+    height: 200px;
+  }
+}
+/* --- Section Header Styles (Can be reused) --- */
+.section-title {
+  font-weight: 900; /* Very bold */
+  margin-bottom: 0.75rem;
+  font-size: 2.2rem;
+  color: #212529; /* Dark color */
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  max-width: 600px; /* Limit width */
+  margin-left: auto;
+  margin-right: auto;
+  color: #6c757d; /* Muted color */
+}
+
+/* --- Featured Items / Product Card Styles --- */
+.featured-items {
+  background-color: #ffffff; /* White background for this section */
+}
+
+.product-card {
+  border: 1px solid #e9ecef; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensure content respects border-radius */
+  height: 100%; /* Make cards in the same row equal height */
+  display: flex; /* Use flexbox for consistent height */
+  flex-direction: column; /* Stack image and info vertically */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow on hover */
+}
+
+.product-image-wrapper {
+  padding: 1rem; /* Space around the image */
+  text-align: center; /* Center image if it's smaller than wrapper */
+  flex-shrink: 0; /* Prevent image wrapper from shrinking */
+}
+
+.product-image {
+  max-height: 200px; /* Limit image height */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure image fits without distortion */
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  opacity: 0.9; /* Slight fade on hover */
+}
+
+.product-sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ea4c3c; /* Theme red color */
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.product-info {
+  padding: 1rem;
+  border-top: 1px solid #e9ecef; /* Separator line */
+  text-align: left; /* Left align text */
+  flex-grow: 1; /* Allow info section to grow and push price down */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-name {
+  font-size: 1rem; /* Adjust as needed */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  flex-grow: 1; /* Allow name to push price down */
+}
+
+.product-name a {
+  color: #212529; /* Dark color for product name link */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product-name a:hover {
+  color: #ea4c3c; /* Theme red on hover */
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #212529; /* Dark price color */
+  margin-bottom: 0;
+  margin-top: auto; /* Push price to the bottom */
+}
+
+/* Optional: Style price differently (e.g., red) */
+/* .product-price {
+    color: #ea4c3c;
+} */
+
+/* Reusing Animation from previous step */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.anim-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  .product-name {
+    font-size: 0.95rem;
+  }
+  .product-price {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .product-info {
+    padding: 0.75rem;
+  }
+}
+/* --- CTA Banner Section --- */
+.cta-banner {
+  /* Use a dark background color or image */
+  background-color: #1a1a2e; /* Example dark blue/purple */
+  /* Or use the image background if you have one like the example */
+  /* background-image: url('path/to/your/textured-background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff; /* White text */
+  overflow: hidden; /* Prevent elements sticking out */
+}
+
+.cta-image-container {
+  position: relative;
+  display: inline-block; /* Or adjust layout as needed */
+  padding: 2rem; /* Add space around */
+  z-index: 1; /* Ensure container is interactive */
+}
+
+/* White Frame Effect */
+.cta-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 1rem; /* Control frame position/thickness (adjust padding above too) */
+  border: 3px solid rgba(255, 255, 255, 0.8); /* White border */
+  z-index: 1; /* Behind image wrapper, above container background */
+  transition: transform 0.4s ease-out;
+}
+
+/* Red Brush Stroke Effect */
+.cta-image-wrapper {
+  position: relative; /* For positioning image and stroke */
+  z-index: 2; /* Above the frame */
+  display: inline-block;
+}
+
+.cta-image-wrapper::after {
+  content: "";
+  position: absolute;
+  /* Adjust these values to position/size the stroke relative to the wrapper */
+  bottom: -20px;
+  left: -30px;
+  width: 130%; /* Make it wider than the image */
+  height: 70%; /* Adjust height */
+  /* Use an actual SVG or PNG for a better brush effect */
+  background: radial-gradient(ellipse at center, #ea4c3c 50%, transparent 75%);
+  background-size: 100% 100%; /* Control gradient size */
+  /* Or use a background image: */
+  /* background-image: url('path/to/your/red-brush-stroke.svg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  /* background-position: center; */
+  opacity: 0.85; /* Make it slightly transparent */
+  transform: rotate(-10deg); /* Slight angle */
+  z-index: 1; /* Behind the image but above the frame */
+  transition: transform 0.4s ease-out;
+}
+
+.cta-image {
+  position: relative; /* To ensure it's above the brush stroke */
+  z-index: 2;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Optional: slight pop-out effect */
+  transform: scale(1.05) rotate(-5deg);
+  transition: transform 0.4s ease-out;
+}
+
+/* Hover effects */
+.cta-banner .row:hover .cta-image-container::before {
+  transform: scale(0.95); /* Frame shrinks slightly */
+}
+.cta-banner .row:hover .cta-image-wrapper::after {
+  transform: rotate(-12deg) scale(1.05); /* Brush stroke enhances */
+}
+.cta-banner .row:hover .cta-image {
+  transform: scale(1.1) rotate(-3deg); /* Image pops more */
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-headline {
+  color: #ea4c3c; /* Theme red color */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cta-title {
+  font-size: 2.8rem; /* Large title */
+  font-weight: 900; /* Very bold */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cta-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8; /* Slightly less prominent */
+}
+
+.btn-cta {
+  background-color: #ea4c3c;
+  color: #fff;
+  padding: 12px 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px; /* Slightly rounded */
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #d43f30; /* Darker red on hover */
+  color: #fff;
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* --- CTA Animation Classes --- */
+.anim-fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.anim-fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s; /* Slight delay for text */
+}
+.anim-fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+  .cta-title {
+    font-size: 2.2rem;
+  }
+  .cta-image-container {
+    padding: 1rem; /* Reduce padding */
+  }
+  .cta-image-container::before {
+    inset: 0.5rem; /* Adjust frame */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cta-banner {
+    text-align: center; /* Center everything on mobile */
+  }
+  .cta-title {
+    font-size: 2rem;
+  }
+  .cta-headline {
+    font-size: 1.1rem;
+  }
+  .cta-description {
+    font-size: 0.9rem;
+  }
+  /* Adjust image/frame/stroke positioning if needed for centered mobile layout */
+  .cta-image-container {
+    margin-bottom: 2rem; /* Add space below image when stacked */
+  }
+}
+/* --- Features Bar Section --- */
+.features-section {
+  background-color: #ffffff; /* Or keep it transparent if page bg is white */
+}
+
+.features-bar {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 12px; /* Rounded corners */
+  padding: 2rem 1.5rem; /* Vertical and horizontal padding */
+  position: relative; /* Needed for pseudo-elements */
+  overflow: hidden; /* Clip pseudo-elements */
+  z-index: 1; /* Base stacking context */
+}
+
+/* Background Graphic Elements */
+.features-bar::before,
+.features-bar::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%; /* For circles */
+  z-index: -1; /* Behind content */
+  opacity: 0.5;
+}
+
+/* Top-Left Dots (using radial gradient) */
+.features-bar::before {
+  top: -30px;
+  left: -30px;
+  width: 150px; /* Size of dot area */
+  height: 150px;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.07) 1px,
+    transparent 1.5px
+  );
+  background-size: 10px 10px; /* Dot density */
+  border-radius: 12px 0 0 0; /* Match corner radius (optional) */
+}
+
+/* Top-Right Circle & Bottom-Left Circle (Combined with ::after) */
+/* Using box-shadow for multiple circles is tricky. Simpler: use border */
+.features-bar::after {
+  /* Top Right Circle */
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(234, 76, 60, 0.1); /* Faint red border */
+
+  /* Bottom Left Circle (using box-shadow as a hack - less ideal) */
+  /* box-shadow: -180px 180px 0 -90px rgba(234, 76, 60, 0.1); */
+  /* Note: A second pseudo-element on an inner div or SVG background is better for multiple distinct shapes */
+}
+
+/* Alternative/Addition: Bottom Right Dots (if ::after not used for circles) */
+/*
+.features-bar::after {
+   bottom: -30px;
+   right: -30px;
+   width: 150px;
+   height: 150px;
+   background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1.5px);
+   background-size: 10px 10px;
+   border-radius: 0 0 12px 0;
+}
+*/
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center items on mobile */
+}
+
+/* Center items on medium screens and up if text-md-start is used */
+@media (min-width: 768px) {
+  .feature-item {
+    justify-content: flex-start;
+  }
+}
+
+.feature-icon {
+  font-size: 2rem; /* Icon size */
+  color: #343a40; /* Dark grey icon color */
+  margin-right: 0.75rem; /* Space between icon and text */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  font-weight: 500; /* Slightly bolder */
+  color: #495057; /* Slightly lighter text color */
+  line-height: 1.3;
+}
+
+/* --- Animation --- */
+.anim-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.anim-zoom-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .features-bar {
+    padding: 1.5rem 1rem;
+  }
+  .feature-icon {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+  }
+  .feature-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .features-bar::before, /* Optional: Hide graphics on very small screens */
+   .features-bar::after {
+    display: none;
+  }
+}
+/* --- Best Seller Section / Carousel --- */
+.best-seller-section {
+  background-color: #ffffff; /* White background */
+}
+
+/* Spacing for items within Owl Carousel */
+.best-seller-carousel .item {
+  /* Owl Carousel adds its own stage padding/margins usually,
+       but you might need to adjust item margin if needed */
+  /* margin: 0 10px; */ /* Example if spacing is needed */
+}
+
+/* Ensure product card takes height within item */
+.best-seller-carousel .product-card {
+  margin-bottom: 1px; /* Fix potential small gap issue */
+}
+
+/* Custom Owl Navigation */
+.custom-owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: 1px solid #e9ecef; /* Light border */
+  border-radius: 50%;
+  color: #ea4c3c; /* Theme red color for arrow */
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10; /* Ensure it's above carousel items */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-owl-nav:hover {
+  background-color: #ea4c3c;
+  color: #fff;
+  border-color: #ea4c3c;
+}
+
+.custom-owl-prev {
+  left: -20px; /* Adjust position */
+}
+
+.custom-owl-next {
+  right: -20px; /* Adjust position */
+}
+
+/* Hide default Owl Nav/Dots if needed (usually handled by options) */
+.best-seller-carousel.owl-theme .owl-nav {
+  display: none;
+}
+.best-seller-carousel.owl-theme .owl-dots {
+  display: none; /* Or style them if you want dots */
+}
+
+/* --- Responsive Adjustments for Nav Buttons --- */
+@media (max-width: 767.98px) {
+  .custom-owl-prev {
+    left: -10px;
+  }
+  .custom-owl-next {
+    right: -10px;
+  }
+  .custom-owl-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .custom-owl-nav {
+    /* Optional: Hide on very small screens if they overlap content */
+    /* display: none; */
+  }
+}
+/* --- Category Promo Section --- */
+.category-promo-section {
+  background-color: #fff; /* Or your desired page background */
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden; /* Important to clip shapes/images */
+  padding: 2rem 1.5rem; /* Space for text */
+  min-height: 300px; /* Ensure cards have some height */
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* Align text */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Specific Backgrounds */
+.promo-card-1 {
+  background: linear-gradient(
+    135deg,
+    #a890fe,
+    #cf8bf3,
+    #f7797d
+  ); /* Purple/Pink gradient */
+}
+.promo-card-2 {
+  background-color: #f44336; /* Solid Red/Orange */
+}
+.promo-card-3 {
+  background: linear-gradient(
+    135deg,
+    #6dd5ed,
+    #a890fe
+  ); /* Blue/Purple gradient */
+}
+
+/* Background Shapes Container */
+.promo-bg-elements {
+  position: absolute;
+  inset: 0; /* Cover the whole card */
+  z-index: 1; /* Behind content and image */
+  overflow: hidden; /* Clip shapes strictly */
+}
+
+/* Yellow Shapes Styling */
+.promo-bg-elements .shape {
+  position: absolute;
+  background-color: #ffeb3b; /* Bright Yellow */
+  width: 100px;
+  height: 100px;
+  opacity: 0.8;
+}
+
+/* Positioning for shapes in Card 1 & 3 (Adjust as needed) */
+.promo-card-1 .shape-1,
+.promo-card-3 .shape-1 {
+  bottom: -30px;
+  left: -20px;
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%); /* Chevron-like */
+}
+.promo-card-1 .shape-2,
+.promo-card-3 .shape-2 {
+  bottom: 10px;
+  left: 40px;
+  transform: rotate(-30deg);
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond */
+}
+/* Variation for Card 3 Shapes (Example) */
+.promo-card-3 .shape-1 {
+  left: auto;
+  right: -10px;
+  transform: rotate(-45deg);
+}
+.promo-card-3 .shape-2 {
+  left: auto;
+  right: 50px;
+  bottom: 20px;
+  transform: rotate(20deg);
+}
+
+/* Text Content Styling */
+.promo-content {
+  position: relative;
+  z-index: 3; /* Above image and shapes */
+  margin-bottom: auto; /* Pushes content to top */
+}
+
+.promo-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.promo-price {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Image Styling */
+.promo-image {
+  position: absolute;
+  bottom: 10px; /* Adjust vertical position */
+  right: 10px; /* Adjust horizontal position */
+  max-width: 70%; /* Control image size relative to card */
+  height: auto;
+  z-index: 2; /* Above shapes, below text */
+  transition: transform 0.4s ease-out;
+}
+
+/* Card Specific Image Positions (Examples - Adjust as needed) */
+.promo-card-1 .promo-image {
+  right: 5px;
+  bottom: 5px;
+  max-width: 75%;
+}
+.promo-card-2 .promo-image {
+  right: 50%; /* Center horizontally */
+  transform: translateX(50%); /* Correct centering */
+  bottom: 15px;
+  max-width: 55%;
+}
+.promo-card-3 .promo-image {
+  right: 15px;
+  bottom: 15px;
+  max-width: 65%;
+}
+
+.promo-card:hover .promo-image {
+  transform: scale(1.05) rotate(3deg); /* Add subtle hover effect */
+}
+.promo-card-2:hover .promo-image {
+  transform: translateX(50%) scale(1.05); /* Keep centering */
+}
+
+/* Reusing Animation (Adjust delay using inline style) */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: var(--anim-delay, 0s); /* Use CSS variable for delay */
+}
+
+.anim-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+  .promo-card {
+    min-height: 280px;
+  }
+  .promo-title {
+    font-size: 1.6rem;
+  }
+  .promo-image {
+    max-width: 60%; /* Slightly smaller images */
+  }
+}
+@media (max-width: 767.98px) {
+  .promo-card {
+    min-height: 250px;
+    padding: 1.5rem 1rem;
+    text-align: center; /* Center text on mobile */
+  }
+  .promo-content {
+    margin-bottom: 0; /* Remove margin */
+    padding-bottom: 120px; /* Add padding to prevent overlap with centered image */
+  }
+  .promo-image {
+    max-width: 50%;
+    left: 50%;
+    right: auto;
+    bottom: 15px;
+    transform: translateX(-50%); /* Center image */
+  }
+  .promo-card:hover .promo-image {
+    transform: translateX(-50%) scale(1.05); /* Maintain centering on hover */
+  }
+  /* Hide shapes on mobile if they clutter */
+  .promo-bg-elements .shape {
+    /* display: none; */
+    opacity: 0.4; /* Or reduce opacity */
+  }
+}
+/* --- Client Feedback Section --- */
+.client-feedback-section {
+  background-color: #ffffff; /* Or your page background */
+}
+
+.testimonial-card {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 10px;
+  padding: 2.5rem; /* Generous padding */
+  padding-left: 3rem; /* Extra left padding */
+  position: relative; /* For avatar and quote symbol positioning */
+  min-height: 200px; /* Ensure some height */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Make cards in same row equal height */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-avatar {
+  width: 70px; /* Avatar size */
+  height: 70px;
+  border-radius: 50%; /* Circular */
+  border: 3px solid #fff; /* White border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  object-fit: cover; /* Ensure image covers space */
+  position: absolute;
+  top: 2.5rem; /* Align with top padding */
+  left: -35px; /* Half of width to pull outside */
+  z-index: 2; /* Above quote symbol */
+}
+
+.testimonial-body {
+  position: relative; /* For quote symbol */
+  padding-left: 50px; /* Space for avatar + extra */
+  min-height: 70px; /* Match avatar height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+/* Quote Symbol */
+.testimonial-body::before {
+  content: "\201C"; /* Left double quotation mark */
+  font-family: Georgia, serif; /* Use a serif font for quotes */
+  font-size: 5rem; /* Large size */
+  font-weight: bold;
+  color: rgba(234, 76, 60, 0.15); /* Very faint theme red */
+  position: absolute;
+  top: -10px; /* Adjust vertical position */
+  left: 40px; /* Adjust horizontal position */
+  line-height: 1;
+  z-index: 1; /* Behind avatar */
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  color: #495057; /* Text color */
+  line-height: 1.7;
+  margin-bottom: 1.5rem; /* Space before author */
+  position: relative; /* Ensure text is above quote mark */
+  z-index: 2;
+}
+
+.testimonial-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ea4c3c; /* Theme red */
+  margin-bottom: 0;
+  position: relative; /* Ensure text is above quote mark */
+  z-index: 2;
+}
+
+/* Dash before author name */
+.testimonial-author::before {
+  content: "\2014"; /* Em dash */
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+/* --- Animation (Reused) --- */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: var(--anim-delay, 0s); /* Use CSS variable for delay */
+}
+
+.anim-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .testimonial-card {
+    padding: 2rem;
+    padding-top: 4rem; /* More top padding to make space for avatar */
+    text-align: center; /* Center text */
+  }
+  .testimonial-avatar {
+    top: -35px; /* Pull avatar above */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+  }
+  .testimonial-body {
+    padding-left: 0; /* Remove left padding */
+    text-align: center;
+  }
+  .testimonial-body::before {
+    /* Adjust quote position for centered layout */
+    top: -5px;
+    left: 10px;
+    font-size: 4rem;
+  }
+  .testimonial-quote {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 575.98px) {
+  /* Use col-10 offset-1 to center single column card slightly */
+  .client-feedback-section .row > [class*="col-"]:first-child:last-child {
+    /* If only one card is present */
+    /* max-width: 83.333333%; */ /* col-10 width */
+    /* margin-left: 8.333333%; */ /* offset-1 */
+  }
+} /* --- Footer Section --- */
+.footer-section {
+  background-color: #2c303a; /* Dark background color */
+  color: #adb5bd; /* Default light grey text color */
+  font-size: 0.9rem;
+}
+
+.footer-widget {
+  margin-bottom: 1.5rem; /* Space below each widget on mobile */
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff; /* White logo */
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.footer-about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.widget-title {
+  color: #ffffff; /* White widget titles */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Or none if preferred */
+}
+
+.footer-list li,
+.footer-contact-list li {
+  margin-bottom: 0.6rem; /* Spacing between list items */
+}
+
+.footer-list li a {
+  color: #adb5bd; /* Link color */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff; /* White on hover */
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-contact-list {
+  line-height: 1.7;
+}
+
+.footer-social-icons a {
+  display: inline-flex; /* Use flex for centering */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #adb5bd; /* Icon color */
+  border-radius: 6px; /* Slightly rounded square */
+  margin-right: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #ea4c3c; /* Theme red background on hover */
+  color: #ffffff; /* White icon on hover */
+}
+
+/* Optional: Footer Bottom Bar Styling */
+/*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) {
+  .footer-section {
+    text-align: center; /* Center align widgets on mobile */
+  }
+  .footer-social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+  }
+}

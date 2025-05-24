@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shome Header Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons (Optional, but good for icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="register.css">
+  </head>
+  <body>
+    <header>
+      <!-- Top Bar -->
+      <div class="top-bar py-1">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+          <div class="top-bar-left text-muted d-none d-md-block"> World Wide Completely Free Returns and Free Shipping </div>
+          <div class="top-bar-right d-flex align-items-center">
+            <a href="mailto:demo@example.com" class="text-decoration-none me-3">
+              <i class="bi bi-envelope-fill text-danger me-1"></i> demo@example.com </a>
+            <a href="#" class="text-decoration-none">
+              <i class="bi bi-person-fill text-danger me-1"></i> Account </a>
+          </div>
+        </div>
+      </div>
+      <!-- Middle Header: Logo, Search, Icons -->
+      <div class="middle-header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a class="navbar-brand logo" href="#">Shome</a>
+          <!-- Search Bar -->
+          <form class="d-flex search-form flex-grow-1 mx-3 mx-lg-5" role="search">
+            <input class="form-control me-0 rounded-0 rounded-start" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-danger rounded-0 rounded-end px-3" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+          <!-- Icons -->
+          <div class="header-icons d-flex align-items-center">
+            <a href="#" class="text-decoration-none me-3 position-relative">
+              <i class="bi bi-heart fs-4"></i>
+              <!-- Optional Wishlist Count Badge -->
+              <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span> -->
+            </a>
+            <a href="#" class="text-decoration-none position-relative">
+              <i class="bi bi-bag fs-4"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 02 <span class="visually-hidden">items in cart</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Main Navigation Bar -->
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="container">
+          <!-- Toggler Button (for mobile) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="mainNavbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dro">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> PAGES </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">ACCOUNT</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">LOGIN</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">REGISTER</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> SHOP </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="onsale.html">ON SALES</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="notonsale.html">WITHOUT SALE</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> BLOG </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="blog.html">Blog grid</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="bloglayout.html">Blog special</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="login-page-wrapper animate-section">
+      <div class="login-box">
+        <h2 class="login-title animate-item" data-delay="0s">REGISTER</h2>
+        <hr class="title-separator animate-item" data-delay="0.1s">
+        <form action="#" method="post">
+          <div class="form-group animate-item" data-delay="0.2s">
+            <label for="username">Username or email address <span class="required">*</span>
+            </label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group animate-item" data-delay="0.3s">
+            <label for="password">Password <span class="required">*</span>
+            </label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="login-button animate-item" data-delay="0.4s">Login</button>
+          <div class="form-options animate-item" data-delay="0.5s">
+            <div class="remember-me">
+              <input type="checkbox" id="rememberme" name="rememberme">
+              <label for="rememberme">Remember me</label>
+            </div>
+            <div class="lost-password">
+              <a href="#forgot">Lost your password?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer-section pt-5 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- gy-4 adds vertical gutter spacing -->
+          <!-- Column 1: About & Social -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-logo">Shome</h3>
+              <p class="footer-about-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+              <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <!-- Dribbble icon might not be in standard Bootstrap Icons -->
+                <a href="#" aria-label="Dribbble">
+                  <i class="bi bi-dribbble"></i>
+                </a>
+                <!-- Or use bi-globe/bi-basketball if missing -->
+                <a href="#" aria-label="Pinterest">
+                  <i class="bi bi-pinterest"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 2: Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Services</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">Home monitoring</a>
+                </li>
+                <li>
+                  <a href="#">Air Filters</a>
+                </li>
+                <li>
+                  <a href="#">Professional installation</a>
+                </li>
+                <li>
+                  <a href="#">Smart Buildings</a>
+                </li>
+                <li>
+                  <a href="#">For contractors</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 3: My Account -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">My Account</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">My Account</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+                <li>
+                  <a href="#">Shopping cart</a>
+                </li>
+                <li>
+                  <a href="#">Shop</a>
+                </li>
+                <li>
+                  <a href="#">Services Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Contact Info</h4>
+              <ul class="footer-contact-list list-unstyled">
+                <li>Address: Your address goes here.</li>
+                <li>Phone//fax: 0123456789</li>
+                <li>Email: demo@example.com</li>
+                <li>www.example.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+        <!-- Optional: Footer Bottom Bar -->
+        <!--
+            <div class="row mt-4 pt-4 border-top border-secondary border-opacity-25"><div class="col text-center text-secondary">
+                   © 2023 Shome. All Rights Reserved.
+                </div></div>
+             -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- End Footer Section -->
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- Bootstrap JS Bundle (should already be at the bottom of your body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Custom JS for Animation -->
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedSections = document.querySelectorAll('.animate-section');
+        // Fallback for browsers that don't support Intersection Observer
+        if (!('IntersectionObserver' in window)) {
+          animatedSections.forEach(section => {
+            section.classList.add('is-visible');
+            const items = section.querySelectorAll('.animate-item');
+            items.forEach(item => item.classList.add('is-visible')); // Force visible
+          });
+          return;
+        }
+        // Intersection Observer Configuration
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const section = entry.target;
+              section.classList.add('is-visible'); // Mark section as visible
+              // Find all animatable items within this specific section
+              const itemsToAnimate = section.querySelectorAll('.animate-item');
+              itemsToAnimate.forEach(item => {
+                const delay = item.dataset.delay || '0s'; // Get delay from data attribute
+                item.style.transitionDelay = delay; // Apply CSS transition delay
+                item.classList.add('is-visible'); // Add class to trigger animation
+              });
+              // Optional: Stop observing the section once animated
+              // Usually for a login form, you want it animated on load,
+              // so unobserving might not be necessary unless it's part of a larger scrolling page.
+              observer.unobserve(section);
+            }
+          });
+        }, observerOptions);
+        // Observe each section
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>

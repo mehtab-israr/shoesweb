@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons (Optional, but good for icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        padding: 20px;
+      }
+
+      .product-section {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .image-gallery,
+      .product-info {
+        flex: 1 1 300px;
+      }
+
+      .main-image {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .thumbnail-row {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .thumbnail {
+        width: 60px;
+        height: 60px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        object-fit: cover;
+        transition: border 0.3s;
+      }
+
+      .thumbnail.active {
+        border-color: #ff4d4f;
+      }
+
+      .product-info h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 20px;
+        color: #ff4d4f;
+        font-weight: bold;
+      }
+
+      .stars {
+        color: gold;
+      }
+
+      .desc {
+        margin: 15px 0;
+        color: #555;
+      }
+
+      .colors,
+      .sizes {
+        margin-bottom: 15px;
+      }
+
+      .color-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin-right: 8px;
+        border: 2px solid #ccc;
+        cursor: pointer;
+      }
+
+      .sizes span {
+        border: 1px solid #ccc;
+        padding: 5px 12px;
+        margin-right: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .sizes span:hover {
+        background-color: #eee;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .actions button {
+        background-color: #ff4d4f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .actions button:hover {
+        background-color: #e63e40;
+      }
+
+      .actions a {
+        font-size: 14px;
+        color: #555;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .product-section {
+          flex-direction: column;
+        }
+      }
+
+      /* Import a Google Font (Example: Montserrat) */
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        /* Apply the font */
+      }
+
+      /* --- Top Bar --- */
+      .top-bar {
+        background-color: #f8f9fa;
+        /* Light grey background */
+        font-size: 0.8rem;
+        /* Smaller font size */
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .top-bar-right a {
+        color: #6c757d;
+        /* Muted text color */
+        transition: color 0.2s ease-in-out;
+      }
+
+      .top-bar-right a:hover {
+        color: #dc3545;
+        /* Red color on hover */
+      }
+
+      .top-bar-right .bi {
+        vertical-align: middle;
+      }
+
+      /* --- Middle Header --- */
+      .middle-header {
+        background-color: white;
+        /* White background */
+      }
+
+      .logo {
+        font-size: 2.8rem;
+        /* Larger font size */
+        font-weight: 900;
+        /* Very bold */
+        color: #212529;
+        /* Dark color */
+        text-decoration: none;
+        letter-spacing: -2px;
+        /* Tighten letter spacing slightly */
+        line-height: 1;
+      }
+
+      .logo:hover {
+        color: #000;
+      }
+
+      .search-form {
+        max-width: 500px;
+        /* Limit search bar width on larger screens */
+      }
+
+      .search-form .form-control {
+        border-right: none;
+        /* Remove border between input and button */
+      }
+
+      .search-form .form-control:focus {
+        box-shadow: none;
+        /* Remove focus glow */
+        border-color: #ced4da;
+        /* Keep standard border color on focus */
+      }
+
+      .search-form .btn-danger {
+        border: 1px solid #dc3545;
+        /* Add border to match input */
+        background-color: #dc3545;
+        /* Red background */
+      }
+
+      .header-icons a {
+        color: #212529;
+        /* Dark icon color */
+      }
+
+      .header-icons a:hover {
+        color: #dc3545;
+        /* Red on hover */
+      }
+
+      .header-icons .badge {
+        font-size: 0.6em;
+        padding: 0.3em 0.4em;
+        /* Adjust badge padding */
+        transform: translate(50%, -50%);
+        /* Fine-tune badge position */
+      }
+
+      /* --- Main Navigation Bar --- */
+      .main-navbar {
+        background-color: #ea4c3c;
+        /* Specific Red from image */
+      }
+
+      .main-navbar .nav-link {
+        color: #ffffff;
+        /* White text */
+        padding: 0.8rem 1rem;
+        text-transform: uppercase;
+        /* Uppercase text */
+        font-weight: 700;
+        /* Bold */
+        font-size: 0.9rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .main-navbar .nav-link:hover,
+      .main-navbar .nav-link.active,
+      .main-navbar .nav-item.show .nav-link {
+        /* Style for active/hover/open dropdown */
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Slightly darker background on interaction */
+      }
+
+      .main-navbar .dropdown-menu {
+        border-radius: 0;
+        /* Square corners for dropdown */
+        border: none;
+        margin-top: 0;
+        /* Align dropdown directly below */
+        font-size: 0.9rem;
+      }
+
+      .main-navbar .dropdown-item {
+        color: #333;
+        padding: 0.5rem 1rem;
+        text-transform: none;
+        /* Normal case for dropdown items */
+        font-weight: 400;
+        /* Normal weight */
+      }
+
+      .main-navbar .dropdown-item:hover,
+      .main-navbar .dropdown-item:focus {
+        background-color: #f8f9fa;
+        /* Light grey hover */
+        color: #ea4c3c;
+        /* Red text on hover */
+      }
+
+      /* --- Responsiveness Adjustments --- */
+      /* Make search bar take more width on smaller screens before collapsing */
+      @media (max-width: 991.98px) {
+        .search-form {
+          max-width: none;
+          /* Allow full width */
+          order: 3;
+          /* Move search below logo and icons */
+          width: 100%;
+          /* Take full width */
+          margin-top: 1rem !important;
+          /* Add space above */
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        .middle-header>.container {
+          flex-wrap: wrap;
+          /* Allow wrapping */
+        }
+
+        .logo {
+          order: 1;
+        }
+
+        .header-icons {
+          order: 2;
+        }
+
+        .main-navbar .navbar-nav {
+          align-items: center;
+          /* Center items in collapsed menu */
+        }
+
+        .main-navbar .nav-link {
+          padding: 0.5rem 1rem;
+          /* Adjust padding for collapsed menu */
+          text-align: center;
+          width: 100%;
+        }
+
+        .main-navbar .dropdown-menu {
+          background-color: rgba(0, 0, 0, 0.1);
+          /* Darker background for dropdown in mobile */
+          text-align: center;
+        }
+
+        .main-navbar .dropdown-item {
+          color: #fff;
+          /* White text for mobile dropdown items */
+        }
+
+        .main-navbar .dropdown-item:hover,
+        .main-navbar .dropdown-item:focus {
+          background-color: rgba(0, 0, 0, 0.2);
+          color: #fff;
+        }
+      }
+
+      /* Hide top bar text on very small screens if needed */
+      @media (max-width: 575.98px) {
+        .top-bar-left {
+          display: none;
+          /* Hide completely */
+        }
+
+        .top-bar>.container {
+          justify-content: center;
+          /* Center the right items */
+        }
+
+        .logo {
+          font-size: 2rem;
+          /* Slightly smaller logo */
+        }
+
+        .header-icons .bi {
+          font-size: 1.2rem;
+          /* Smaller icons */
+        }
+      }
+
+      /* --- Footer Section --- */
+      .footer-section {
+        background-color: #2c303a;
+        /* Dark background color */
+        color: #adb5bd;
+        /* Default light grey text color */
+        font-size: 0.9rem;
+      }
+
+      .footer-widget {
+        margin-bottom: 1.5rem;
+        /* Space below each widget on mobile */
+      }
+
+      .footer-logo {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #ffffff;
+        /* White logo */
+        margin-bottom: 1rem;
+        letter-spacing: -1px;
+      }
+
+      .footer-about-text {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .widget-title {
+        color: #ffffff;
+        /* White widget titles */
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+        /* Or none if preferred */
+      }
+
+      .footer-list li,
+      .footer-contact-list li {
+        margin-bottom: 0.6rem;
+        /* Spacing between list items */
+      }
+
+      .footer-list li a {
+        color: #adb5bd;
+        /* Link color */
+        text-decoration: none;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+      }
+
+      .footer-list li a:hover {
+        color: #ffffff;
+        /* White on hover */
+        padding-left: 5px;
+        /* Slight indent on hover */
+      }
+
+      .footer-contact-list {
+        line-height: 1.7;
+      }
+
+      .footer-social-icons a {
+        display: inline-flex;
+        /* Use flex for centering */
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Semi-transparent background */
+        color: #adb5bd;
+        /* Icon color */
+        border-radius: 6px;
+        /* Slightly rounded square */
+        margin-right: 0.5rem;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .footer-social-icons a:hover {
+        background-color: #ea4c3c;
+        /* Theme red background on hover */
+        color: #ffffff;
+        /* White icon on hover */
+      }
+
+      /* Optional: Footer Bottom Bar Styling */
+      /*
+.footer-section .border-top {
+     border-color: rgba(255, 255, 255, 0.1) !important; // Lighter border
+}
+*/
+      /* --- Responsive Adjustments --- */
+      @media (max-width: 767.98px) {
+        .footer-section {
+          text-align: center;
+          /* Center align widgets on mobile */
+        }
+
+        .footer-social-icons {
+          justify-content: center;
+          /* Center social icons */
+        }
+
+        .footer-logo {
+          font-size: 2.2rem;
+        }
+
+        .widget-title {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Top Bar -->
+      <div class="top-bar py-1">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+          <div class="top-bar-left text-muted d-none d-md-block"> World Wide Completely Free Returns and Free Shipping </div>
+          <div class="top-bar-right d-flex align-items-center">
+            <a href="mailto:demo@example.com" class="text-decoration-none me-3">
+              <i class="bi bi-envelope-fill text-danger me-1"></i> demo@example.com </a>
+            <a href="#" class="text-decoration-none">
+              <i class="bi bi-person-fill text-danger me-1"></i> Account </a>
+          </div>
+        </div>
+      </div>
+      <!-- Middle Header: Logo, Search, Icons -->
+      <div class="middle-header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a class="navbar-brand logo" href="#">Shome</a>
+          <!-- Search Bar -->
+          <form class="d-flex search-form flex-grow-1 mx-3 mx-lg-5" role="search">
+            <input class="form-control me-0 rounded-0 rounded-start" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-danger rounded-0 rounded-end px-3" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+          <!-- Icons -->
+          <div class="header-icons d-flex align-items-center">
+            <a href="#" class="text-decoration-none me-3 position-relative">
+              <i class="bi bi-heart fs-4"></i>
+              <!-- Optional Wishlist Count Badge -->
+              <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span> -->
+            </a>
+            <a href="#" class="text-decoration-none position-relative">
+              <i class="bi bi-bag fs-4"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 02 <span class="visually-hidden">items in cart</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Main Navigation Bar -->
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="container">
+          <!-- Toggler Button (for mobile) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="mainNavbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dro">
+              <li class="nav-item">
+                <a class="nav-link" href="">HOME</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> PAGES </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="account.html">ACCOUNT</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="login.html">LOGIN</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="register.html">REGISTER</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> SHOP </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="onsale.html">ON SALES</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="notonsale.html">WITHOUT SALE</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> BLOG </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="blog.html">Blog grid</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="bloglayout.html">Blog special</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="product-section">
+      <div class="image-gallery">
+        <img src="qqq.png" id="mainImage" class="main-image" alt="Main Shoe" />
+        <div class="thumbnail-row">
+          <img src="assas.jpg" class="thumbnail active" alt="Thumb 1" onclick="changeImage(this)" />
+          <img src="men-shoes.jpg" class="thumbnail" alt="Thumb 2" onclick="changeImage(this)" />
+          <img src="shoes_02.jpg" class="thumbnail" alt="Thumb 3" onclick="changeImage(this)" />
+          <img src="assas-removebg-preview.png" class="thumbnail" alt="Thumb 4" onclick="changeImage(this)" />
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>Leather Mens Slipper</h2>
+        <div class="price">$20.19</div>
+        <div class="stars">★★★★★ <span style="color: #777;">(5 Customer Review)</span>
+        </div>
+        <p class="desc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam... </p> dsa <div class="colors">
+          <strong>Color:</strong>
+          <br />
+          <span class="color-circle" style="background-color: #222;"></span>
+          <span class="color-circle" style="background-color: #c44;"></span>
+          <span class="color-circle" style="background-color: #888;"></span>
+          <span class="color-circle" style="background-color: #daa520;"></span>
+        </div>
+        <div class="sizes">
+          <strong>Size:</strong>
+          <br />
+          <span>S</span>
+          <span>M</span>
+          <span>L</span>
+          <span>XL</span>
+        </div>
+        <div class="actions">
+          <a href="addtocart.html" class="btn btn-danger text-white">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-section pt-5 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- gy-4 adds vertical gutter spacing -->
+          <!-- Column 1: About & Social -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-logo">Shome</h3>
+              <p class="footer-about-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+              <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <!-- Dribbble icon might not be in standard Bootstrap Icons -->
+                <a href="#" aria-label="Dribbble">
+                  <i class="bi bi-dribbble"></i>
+                </a>
+                <!-- Or use bi-globe/bi-basketball if missing -->
+                <a href="#" aria-label="Pinterest">
+                  <i class="bi bi-pinterest"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 2: Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Services</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">Home monitoring</a>
+                </li>
+                <li>
+                  <a href="#">Air Filters</a>
+                </li>
+                <li>
+                  <a href="#">Professional installation</a>
+                </li>
+                <li>
+                  <a href="#">Smart Buildings</a>
+                </li>
+                <li>
+                  <a href="#">For contractors</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 3: My Account -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">My Account</h4>
+              <ul class="footer-list list-unstyled">
+                <li>
+                  <a href="#">My Account</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+                <li>
+                  <a href="#">Shopping cart</a>
+                </li>
+                <li>
+                  <a href="#">Shop</a>
+                </li>
+                <li>
+                  <a href="#">Services Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="widget-title">Contact Info</h4>
+              <ul class="footer-contact-list list-unstyled">
+                <li>Address: Your address goes here.</li>
+                <li>Phone//fax: 0123456789</li>
+                <li>Email: demo@example.com</li>
+                <li>www.example.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+        <!-- Optional: Footer Bottom Bar -->
+        <!--
+        <div class="row mt-4 pt-4 border-top border-secondary border-opacity-25"><div class="col text-center text-secondary">
+               © 2023 Shome. All Rights Reserved.
+            </div></div>
+         -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- End Footer Section -->
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- JS includes at the bottom --> ...
+    <!-- Bootstrap JS Bundle (should already be at the bottom of your body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Custom JS for Animation -->
+    <script src="script.js"></script>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script>
+      function changeImage(el) {
+        const main = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        el.classList.add('active');
+        main.src = el.src.replace('60x60', '400x300').replace('text=', 'text=Main+');
+      }
+    </script>
+  </body>
+</html>
